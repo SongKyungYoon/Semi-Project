@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 <style type="text/css" rel="stylesheet">
 	#LoginForm{
 	
@@ -38,8 +39,8 @@
 						접속하기
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item" href="login.jsp">로그인</a><li>
-							<li><a class="dropdown-item" href="register.jsp">회원가입</a><li>
+							<li><a class="dropdown-item" href="LoginPage.jsp">로그인</a><li>
+							<li><a class="dropdown-item" href="SignUpForm.jsp">회원가입</a><li>
 						</ul>
 					</li>
 				</ul>
