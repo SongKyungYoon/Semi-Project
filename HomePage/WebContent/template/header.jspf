@@ -1,0 +1,99 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  *{
+  	margin:0px;
+  	padding:0px;
+  }
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  ul{
+  	list-style:none;
+  }
+  .addrass{
+  	width:700px;
+  }
+.row{
+	padding:50px 0px;
+	margin:0px 100px;
+	}
+.cl1{
+	
+}
+.textbox{
+	padding:20px 0px 0px 20px;
+}
+.boxdeco{
+	width:386px;
+	border-style: outset;
+}
+.nav-item{
+	margin-right:60px;
+}
+#logo{
+	margin-right:100px;
+}
+.nav-item>a{
+	display:block;
+	width:120px;
+	text-align:center;
+}
+
+  </style>
+</head>
+<body>
+	<div class="container-fulide" ><!-- 전체폭 까지늘림 ,max-1200-->
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light  " >
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.jsp"><!-- 로고넣는것 -->
+					<div id="logo">
+						<img src="imgs/blue_logo.png" art="logo"/>
+					</div>	
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="collapsibleNavbar">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">찾아오는길</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">교육과정</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">창업지원센터</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDrop" data-toggle="dropdown"> 게시판</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="board.jsp">질문 게시판</a><li>
+								<li><a class="dropdown-item" href="">강의 게시판</a><li>
+								<li><a class="dropdown-item" href="">성적 게시판</a><li>
+							</ul>
+						</li>
+						<li class="nav-item a">
+							<a class="nav-link" href="LoginPage.jsp">로그인</a>
+						</li>
+						<li class="nav-item a">
+							<a class="nav-link"  href="SignUpForm.jsp">회원가입</a>
+						</li>
+					</ul>		
+				</div>
+			</div>
+		</nav>
+	</header>	

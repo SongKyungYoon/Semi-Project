@@ -1,23 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<meta http-equiv="Content-type" content="text/html; charset=EUC-KR">
-<style type="text/css" rel="stylesheet">
-
-</style>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-<title>메인</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  .a{
+  	width:800px;
+  }
+  
+  </style>
 </head>
 <body>
-<div class="container">
-
-	<div class="container" style='width:1000px; background:hotpink'>안녕하세요</div>
-
+<div class="row">
+<div class="col-sm"><img src="./imgs/class1.png"></div>
+<div class="col-sm"><img src="./imgs/class2.png"></div>
+<div class="col-sm"><img src="./imgs/class3.png"></div>
 </div>
+<div class="row">
+<div class="col-sm"><img src="./imgs/class4.png"></div>
+<div class="col-sm"><img src="./imgs/class5.png"></div>
+<div class="col-sm"><img src="./imgs/class6.png"></div>
+</div>
+
+
 </body>
 </html>
