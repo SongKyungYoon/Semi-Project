@@ -31,6 +31,14 @@ public class LoginController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String logout = request.getParameter("logout");	//로그아웃 일경우
+		if(logout.equals("로그아웃")) {
+			HttpSession session = request.getSession();
+			session.removeAttribute("id");
+			session.removeAttribute("name");
+			session.removeAttribute("position");
+			response.sendRedirect("LoginPage.jsp");
+		}
 	}
 
 	@Override
@@ -53,13 +61,12 @@ public class LoginController extends HttpServlet {
 						request.getSession().setAttribute("id", id);
 						request.getSession().setAttribute("name", dto.getName());
 						request.getSession().setAttribute("position", dto.getPosition());
-						System.out.println("로그인 성공");
+						response.sendRedirect("MainPage.jsp");
 					}else if((dto.getPw() == null) && (dto.getPosition() == null)) {
 						request.setAttribute("error"," * 등록되지 않은 아이디 입니다.");
 						request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
 					}else if(!(pw.equals(dto.getPw())) || !(position.equals(dto.getPosition()))) {
 						request.setAttribute("error","비밀번호 또는 직책을 확인해 주세요");
-						System.out.println(request.getAttribute("error"));
 						request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
 					}
 			 }
@@ -87,6 +94,11 @@ public class LoginController extends HttpServlet {
 				request.setAttribute("duplicateId"," * 중복된 아이디 입니다.");
 				request.getRequestDispatcher("SignUpForm.jsp").forward(request, response);
 			}
+		} else if(request.getParameter("button").equals("비회원")) {
+			request.getSession().setAttribute("name", "비회원");
+			request.getSession().setAttribute("id", "비회원");
+			request.getSession().setAttribute("position", "비회원");
+			response.sendRedirect("MainPage.jsp");
 		}
 	}
 	
