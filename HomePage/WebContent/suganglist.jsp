@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 <script type="text/javascript">
 	$(function(){
@@ -42,9 +45,6 @@
 		
 	});
 </script>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
 	<table>
@@ -53,6 +53,7 @@
 				<th>번호</th>
 				<th>신청날짜</th>
 				<th>이름</th>
+				<th>신청강좌</th>
 				<th>생년월일</th>
 				<th>연락처</th>
 				<th>이메일</th>
@@ -65,6 +66,7 @@
 					<td>${bean.num }</td>
 					<td>${bean.nalja }</td>
 					<td>${bean.name }</td>
+					<td>${bean.sub }</td>
 					<td>${bean.date }</td>
 					<td>${bean.pnum }</td>
 					<td>${bean.email }</td>

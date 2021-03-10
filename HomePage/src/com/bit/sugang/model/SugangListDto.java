@@ -5,7 +5,7 @@ import java.sql.Date;
 public class SugangListDto {
 	private int num;
 	private Date nalja,date;
-	private String name,pnum,email,check;
+	private String name,sub,pnum,email,check;
 	public SugangListDto() {}
 	public int getNum() {
 		return num;
@@ -31,6 +31,12 @@ public class SugangListDto {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getSub() {
+		return sub;
+	}
+	public void setSub(String sub) {
+		this.sub = sub;
+	}
 	public String getPnum() {
 		return pnum;
 	}
@@ -49,6 +55,5 @@ public class SugangListDto {
 	public void setCheck(String check) {
 		this.check = check;
 	}
-	
 	
 }

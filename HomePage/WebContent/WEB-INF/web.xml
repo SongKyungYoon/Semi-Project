@@ -11,4 +11,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <listener>
+  	<listener-class>com.bit.listener.RequestListener</listener-class>
+  </listener>
 </web-app>

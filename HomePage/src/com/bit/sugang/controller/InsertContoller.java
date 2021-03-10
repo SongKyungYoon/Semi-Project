@@ -19,6 +19,8 @@ public class InsertContoller extends HttpServlet{
 
 		String name=req.getParameter("name");
 		
+		String sub=req.getParameter("sub");
+		
 		LocalDate ld = LocalDate.parse(req.getParameter("date"), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		java.sql.Date date = java.sql.Date.valueOf(ld);
 		System.out.println(date);
@@ -26,7 +28,7 @@ public class InsertContoller extends HttpServlet{
 		String pnum=req.getParameter("number1")+req.getParameter("number2")+req.getParameter("number3");
 		String email=req.getParameter("email");
 		SugangListDao dao=new SugangListDao();
-		dao.inputList(name, date, pnum,email);
+		dao.inputList(name, sub, date, pnum,email);
 		
 	}
 }
