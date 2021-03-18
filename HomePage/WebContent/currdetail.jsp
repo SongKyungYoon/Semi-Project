@@ -121,6 +121,25 @@
 			}
 			return false;
 		});
+		
+		function getParameterByName(name) {
+		    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+		        results = regex.exec(location.search);
+		    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		}
+		$(".delete").click(function(){
+			$.ajax({
+				url:"currdelete.bit",
+				type:"POST",
+				data:{num:getParameterByName('num')},
+				success:function(){
+					alert('삭제가 완료되었습니다.');
+					location.href="currlist.bit";
+				},
+				
+			});
+		});
 	});
 
 </script>
@@ -161,5 +180,12 @@
 			<button type="submit">수강신청하기</button>
 		</div>
 	</form>
+	<div>
+		<c:if test="${ not empty ID}" >
+		<c:if test="${POSITION =='영업' }">
+		<button type="button" class="delete">게시물 삭제</button>
+		</c:if>
+		</c:if>
+	</div>
 </body>
 </html>

@@ -1,37 +1,30 @@
-package com.bit.curr.controller;
+package com.bit.emp;
 
 import java.io.IOException;
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionContext;
 
-import com.bit.curr.model.CbbDao;
+import com.bit.emp.model.EbbDao;
 
-@WebServlet("/currinsert.bit")
+@WebServlet("/empinsert.bit")
 public class InsertController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getSession().setAttribute("ID", "stxz00");
 		req.getSession().setAttribute("NAME", "이해남");
-		req.getSession().setAttribute("POSITION", "영업");
-		RequestDispatcher rd=req.getRequestDispatcher("currinsert.jsp");
+		req.getSession().setAttribute("POSITION", "취업");
+		RequestDispatcher rd=req.getRequestDispatcher("empinsert.jsp");
 		rd.forward(req, resp);
 		if(req.getSession().getAttribute("ID")==null ||
 				req.getSession().getAttribute("NAME")!=null ||
-				!req.getSession().getAttribute("POSITION").equals("영업"))
-			resp.sendRedirect("currlist.bit");
+				!req.getSession().getAttribute("POSITION").equals("취업"))
+			resp.sendRedirect("emplist.bit");
 	}
 	
 	@Override
@@ -40,19 +33,15 @@ public class InsertController extends HttpServlet{
 			String NAME=(String) req.getSession().getAttribute("NAME");
 			String POSITION=(String) req.getSession().getAttribute("POSITION");
 			//System.out.println(ID+NAME+POSITION);
-			String sub=req.getParameter("sub");
-			
-			LocalDate ld = LocalDate.parse(req.getParameter("open"), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-			java.sql.Date open = java.sql.Date.valueOf(ld);
-			
-			String period=req.getParameter("period");
-			String qual=req.getParameter("qual");
+			String coname=req.getParameter("coname");
 			String content=req.getParameter("content");
+			String deadline=req.getParameter("deadline");
+			String coposition=req.getParameter("coposition");
 			//System.out.println(sub+content);
-			CbbDao dao=new CbbDao();
-			dao.insertList(ID, NAME, POSITION, sub, open, period, qual, content);
+			EbbDao dao=new EbbDao();
+			dao.insertList(ID, NAME, POSITION, coname, content, deadline, coposition);
 			
-			resp.sendRedirect("currlist.bit");
+			resp.sendRedirect("emplist.bit");
 	}
 	
 }

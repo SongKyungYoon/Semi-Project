@@ -1,4 +1,4 @@
-package com.bit.curr.model;
+package com.bit.emp.model;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -8,9 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.bit.sugang.model.SugangListDto;
-
-public class CbbDao {
+import com.bit.emp.model.EbbDto;
+public class EbbDao {
 	String driver ="org.mariadb.jdbc.Driver";
 	String url = "jdbc:mysql://localhost:3306/lmsdb";
 	String user = "scott";
@@ -26,24 +25,25 @@ public class CbbDao {
 		if(conn!=null)conn.close();
 	}
 	
-	public java.util.List<com.bit.curr.model.CbbDto> currList(){
-		java.util.List<com.bit.curr.model.CbbDto> list =new ArrayList<>();
+	public java.util.List<EbbDto> ebbList(){
+		java.util.List<EbbDto> list =new ArrayList<>();
 		
-		String sql="select * from cbb where `delete`=0 order by num desc";
+		String sql="select * from ebb where `delete`=0 order by num desc";
 		try {
 			Class.forName(driver);
 			conn=DriverManager.getConnection(url,user,password);
 			pstmt=conn.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
-				com.bit.curr.model.CbbDto bean=new CbbDto();
+				EbbDto bean=new EbbDto();
 				bean.setNum(rs.getInt("num"));
 				bean.setID(rs.getString("ID"));
 				bean.setNAME(rs.getString("NAME"));
 				bean.setPOSITION(rs.getString("POSITION"));
-				bean.setSub(rs.getString("sub"));
-				bean.setOpen(rs.getDate("open"));
-				bean.setPeriod(rs.getString("period"));
+				bean.setConame(rs.getString("coname"));
+				bean.setNalja(rs.getDate("nalja"));
+				bean.setDeadline(rs.getString("deadline"));
+				bean.setCoposition("coposition");
 				list.add(bean);
 			}
 		} catch (ClassNotFoundException e) {
@@ -64,10 +64,10 @@ public class CbbDao {
 		return list;
 	}
 	
-	public CbbDto currDetail(int num){
-		CbbDto dto=new CbbDto();
+	public EbbDto ebbDetail(int num){
+		EbbDto dto=new EbbDto();
 		
-		String sql="select * from cbb where `num`=?";
+		String sql="select * from ebb where `num`=?";
 		try {
 			Class.forName(driver);
 			conn=DriverManager.getConnection(url,user,password);
@@ -75,10 +75,12 @@ public class CbbDao {
 			pstmt.setInt(1, num);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
-				dto.setSub(rs.getString("sub"));
-				dto.setOpen(rs.getDate("open"));
-				dto.setPeriod(rs.getString("period"));
-				dto.setQual(rs.getString("qual"));
+				dto.setConame(rs.getString("coname"));
+				dto.setNalja(rs.getDate("nalja"));
+				dto.setDeadline(rs.getString("deadline"));
+				dto.setCoposition(rs.getString("coposition"));
+				dto.setCount(rs.getInt("count"));
+				dto.setPOSITION(rs.getString("POSITION"));
 				dto.setContent(rs.getString("content"));
 			}
 		} catch (ClassNotFoundException e) {
@@ -99,8 +101,9 @@ public class CbbDao {
 		return dto;
 	}
 	
-	public void insertList(String ID,String NAME,String POSITION,String sub,Date open,String period,String qual,String content) {
-		String sql="insert into cbb (ID,NAME,POSITION,sub,open,period,qual,content,nalja) values(?,?,?,?,?,?,?,?,now())";
+	
+	public void insertList(String ID,String NAME,String POSITION,String coname,String content,String deadline,String coposition) {
+		String sql="insert into ebb (ID,NAME,POSITION,coname,content,deadline,coposition,nalja) values(?,?,?,?,?,?,?,now())";
 		try {
 			Class.forName(driver);
 			conn=DriverManager.getConnection(url,user,password);
@@ -108,11 +111,10 @@ public class CbbDao {
 			pstmt.setString(1, ID);
 			pstmt.setString(2, NAME);
 			pstmt.setString(3, POSITION);
-			pstmt.setString(4, sub);
-			pstmt.setDate(5, open);
-			pstmt.setString(6, period);
-			pstmt.setString(7, qual);
-			pstmt.setString(8, content);
+			pstmt.setString(4, coname);
+			pstmt.setString(5, content);
+			pstmt.setString(6, deadline);
+			pstmt.setString(7, coposition);
 			pstmt.executeUpdate();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -130,8 +132,8 @@ public class CbbDao {
 		}
 	} 
 	
-	public void deleteCurr(int num) {
-		String sql="UPDATE `cbb` SET `DELETE`=1 WHERE `num`=?";
+	public void deleteEmp(int num) {
+		String sql="UPDATE `ebb` SET `DELETE`=1 WHERE `num`=?";
 		try {
 			Class.forName(driver);
 			conn=DriverManager.getConnection(url,user,password);
@@ -153,4 +155,5 @@ public class CbbDao {
 			}
 		}
 	} 
+	
 }
