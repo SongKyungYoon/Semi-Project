@@ -44,6 +44,7 @@ public class EbbDao {
 				bean.setNalja(rs.getDate("nalja"));
 				bean.setDeadline(rs.getString("deadline"));
 				bean.setCoposition("coposition");
+				bean.setCount(rs.getInt("count"));
 				list.add(bean);
 			}
 		} catch (ClassNotFoundException e) {
@@ -139,6 +140,32 @@ public class EbbDao {
 			conn=DriverManager.getConnection(url,user,password);
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	} 
+	
+	public void countEmp(int num,int count) {
+		count++;
+		String sql="UPDATE `ebb` SET `COUNT`=? WHERE `num`=?";
+		try {
+			Class.forName(driver);
+			conn=DriverManager.getConnection(url,user,password);
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, count);
+			pstmt.setInt(2, num);
 			pstmt.executeUpdate();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

@@ -37,11 +37,11 @@
 					<td>${bean.POSITION }</td>
 			</c:if>
 			</c:if>
-					<td><a href="empdetail.bit?num=${bean.num }">${bean.coname }</a></td>
-					<td><a href="empdetail.bit?num=${bean.num }">${bean.nalja }</a></td>
-					<td><a href="empdetail.bit?num=${bean.num }">${bean.deadline }</a></td>
-					<td><a href="empdetail.bit?num=${bean.num }">${bean.coposition }</a></td>
-					<td><a href="empdetail.bit?num=${bean.num }">자세히보기+</a></td>
+					<td><a href="empdetail.bit?num=${bean.num }&count=${bean.count }">${bean.coname }</a></td>
+					<td><a href="empdetail.bit?num=${bean.num }&count=${bean.count }">${bean.nalja }</a></td>
+					<td><a href="empdetail.bit?num=${bean.num }&count=${bean.count }">${bean.deadline }</a></td>
+					<td><a href="empdetail.bit?num=${bean.num }&count=${bean.count }">${bean.coposition }</a></td>
+					<td><a href="empdetail.bit?num=${bean.num }&count=${bean.count }">자세히보기+</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

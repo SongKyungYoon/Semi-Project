@@ -16,6 +16,8 @@ public class DetailController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		EbbDao dao=new EbbDao();
 		int num=Integer.parseInt(req.getParameter("num"));
+		int count=Integer.parseInt(req.getParameter("count"));
+		dao.countEmp(num, count);
 		req.setAttribute("ebbDetail", dao.ebbDetail(num)); 
 		req.getRequestDispatcher("empdetail.jsp").forward(req, resp);
 	}
