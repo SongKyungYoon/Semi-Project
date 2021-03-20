@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<footer class="bg-dark text-white">
+		<div class="row">
+			<div class="col-sm"></div>
+			<div class="col-sm">
+				<div class="float-left addrass">
+					<p>비트캠프 대표문의</p>
+					<p>080-861-0909</p>
+					<p>*기존의 수강생분들의 행정업무는 해당 센터로 문의 바랍니다</p>
+					<p>서초본원 &nbsp;&nbsp; 02.3486.9600 &nbsp;&nbsp;&nbsp;&nbsp; 신촌센터 &nbsp;&nbsp; 02.707.1480</p>
+					<p>강남센터 &nbsp;&nbsp; 02.3486.9600 &nbsp;&nbsp;&nbsp;&nbsp; 종로센터 &nbsp;&nbsp; 02.707.1480</p>
+					<p>평일 &nbsp;&nbsp; AM 09:00-PM 18:30 &nbsp;&nbsp;&nbsp;&nbsp; 토●일●공휴일 &nbsp;&nbsp; AM 09:00-PM 18:00</p>
+				</div>
+			</div>
+		<div class="col-sm"></div>
+		<div class="col-sm">
+			<div class="float-right">
+				<p><img src="./imgs/ft_icon1.png"></p>
+				<p><img src="./imgs/ft_icon2.png"></p>
+			</div>
+		</div>
+		<div class="col-sm"></div>
+		</div>
+	</footer>
+	<!-- footer 끝 -->
+</div>
+</body>
+</html>
