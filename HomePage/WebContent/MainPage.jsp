@@ -19,7 +19,7 @@
     <div class="col-md-4"><h1 style="float: left;">${sessionScope.name}님 로그인</h1> <small style="margin-left: 7px;">ID: ${sessionScope.id}</small><br><small style="margin-left: 7px;">소속: ${sessionScope.position}</small></div>
     <div class="col-3 col-md-4" style="margin-top: 10px;">
     <a href="LoginController?logout=로그아웃"><button type="button" class="btn btn-primary">Log-Out</button></a>
-    <a href="#"><button type="button" class="btn btn-primary">입퇴실</button></a>
+    <a href="RollCall"><button type="button" class="btn btn-primary">입퇴실</button></a>
     </div>
   </div>
 

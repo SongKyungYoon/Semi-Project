@@ -2,8 +2,8 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,21 +14,26 @@
 	rel="stylesheet"
 	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 	crossorigin="anonymous">
-	<style type="text/css">
-		a{
-			text-decoration: none;
-		}
-	</style>
+<style type="text/css">
+a {
+	text-decoration: none;
+}
+</style>
 </head>
 <body>
 	<div class="container" style="margin-top: 10px;">
 		<div class="row">
-			 <div class="col-md-4"><h1 style="float: left;">${sessionScope.name}님 로그인</h1> <small style="margin-left: 7px;">ID: ${sessionScope.id}</small><br><small style="margin-left: 7px;">소속: ${sessionScope.position}</small></div>
-			<div class="col-3 col-md-2">
+			<div class="col-md-4">
+				<h1 style="float: left;">${sessionScope.name}님로그인</h1>
+				<small style="margin-left: 7px;">ID: ${sessionScope.id}</small><br>
+				<small style="margin-left: 7px;">소속:
+					${sessionScope.position}</small>
 			</div>
+			<div class="col-3 col-md-2"></div>
 			<div class="col-3 col-md-4" style="margin-top: 10px;">
-				<a href="MainPage.jsp"><button type="button" class="btn btn-primary">HOME</button></a>
-				<a href="writingPage.jsp"><button type="button" class="btn btn-primary">글쓰기</button></a>
+				<a href="MainPage.jsp"><button type="button"
+						class="btn btn-primary">HOME</button></a> <a href="writingPage.jsp"><button
+						type="button" class="btn btn-primary">글쓰기</button></a>
 			</div>
 		</div>
 		<div class="row" style="margin-top: 15px;">
@@ -39,7 +44,11 @@
 			</div>
 			<div class="col-6 col-md-3">
 				<h6>
-					<a href="#" class="link-primary">성적확인</a>
+					<div class="col-6 col-md-3">
+						<h6>
+							<a href="SeongJeogController" class="link-primary">성적확인</a>
+						</h6>
+					</div>
 				</h6>
 			</div>
 			<div class="col-6 col-md-3">
@@ -63,14 +72,14 @@
 				</thead>
 				<tbody>
 					<c:forEach var="n" items="${sessionScope.dblist}" varStatus="st">
-					<tr>
-						<td>${n.num}</td>				
-						<td><a href="DetailView?title=${n.title}">${n.title}</a></td>				
-						<td>${n.writer}</td>				
-						<td>${n.date}</td>				
-					</tr>
+						<tr>
+							<td>${n.num}</td>
+							<td><a href="DetailView?title=${n.title}">${n.title}</a></td>
+							<td>${n.writer}</td>
+							<td>${n.date}</td>
+						</tr>
 					</c:forEach>
-					
+
 				</tbody>
 			</table>
 		</div>
