@@ -24,13 +24,13 @@ public class InsertController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getSession().setAttribute("ID", "stxz00");
-		req.getSession().setAttribute("NAME", "ÀÌÇØ³²");
-		req.getSession().setAttribute("POSITION", "¿µ¾÷");
+		req.getSession().setAttribute("NAME", "ì´í•´ë‚¨");
+		req.getSession().setAttribute("POSITION", "ì˜ì—…");
 		RequestDispatcher rd=req.getRequestDispatcher("currinsert.jsp");
 		rd.forward(req, resp);
 		if(req.getSession().getAttribute("ID")==null ||
 				req.getSession().getAttribute("NAME")!=null ||
-				!req.getSession().getAttribute("POSITION").equals("¿µ¾÷"))
+				!req.getSession().getAttribute("POSITION").equals("ì˜ì—…"))
 			resp.sendRedirect("currlist.bit");
 	}
 	
