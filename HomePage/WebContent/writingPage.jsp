@@ -1,83 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=EUC-KR">
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>게시판</title>
+<meta charset="UTF-8">
+<title>글쓰기 페이지</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+	<style type="text/css">
+		a{
+			text-decoration: none;
+		}
+	</style>
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="main.jsp">웹 사이트</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link active" href="main.jsp">메인</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="board.jsp">게시판</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDrop" data-toggle="dropdown">
-						접속하기
-						</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="LoginPage.jsp">로그인</a><li>
-							<li><a class="dropdown-item" href="SignUpForm.jsp">회원가입</a><li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<div class="container">
+	<div class="container" style="margin-top: 10px;">
 		<div class="row">
-			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-				<thead>
-					<tr>
-						<th style="background-color: #eeeeee; text-align: center;">번호</th>
-						<th style="background-color: #eeeeee; text-align: center;">제목</th>
-						<th style="background-color: #eeeeee; text-align: center;">작성자</th>
-						<th style="background-color: #eeeeee; text-align: center;">작성일</th>
-						<th style="background-color: #eeeeee; text-align: center;">조회수</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>하이</td>
-						<td>홍길동</td>
-						<td>2021-03-02</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>뭐임</td>
-						<td>김밥수</td>
-						<td>2021-03-02</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>이하이</td>
-						<td>밥치</td>
-						<td>2021-03-02</td>
-						<td>2</td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="write.jsp" class="btn btn-primary">글쓰기</a>
+			 <div class="col-md-4"><h1 style="float: left;">${sessionScope.name}님 로그인</h1> <small style="margin-left: 7px;">ID: ${sessionScope.id}</small><br><small style="margin-left: 7px;">소속: ${sessionScope.position}</small></div>
+			<div class="col-3 col-md-4">
+			</div>
+			<form class="row g-3" action="NoticeBoardController" method="post">
+				<div class="col-md-3">
+					<label for="inputWriter" class="form-label">글 쓴 이</label> <small style="color: red;">${requestScope.name}</small> <input
+						type="text" name="writer" class="form-control" id="inputWriter" placeholder="본인 이름을 적어주세요" required>
+				</div>
+				<div class="col-md-3">
+					<label for="inputId" class="form-label">아 이 디</label> <small style="color: red;">${requestScope.id}</small> <input
+						type="text" name="id" class="form-control" id="inputId" placeholder="로그인 계정을 입력해 주세요" required>
+				</div>
+				<div class="col-md-3">
+					<label for="inputContent" class="form-label">글 제목</label> <input
+						type="text" name="title" class="form-control" id="inputContent" required>
+				</div>
+				<div class="col-md-3">
+					<label for="inputDate" class="form-label">작성일자</label> <input
+						type="date" name="date" class="form-control" id="inputDate" required>
+				</div>
+				<div class="col-12 form-floating">
+					<textarea class="form-control" placeholder="Leave a comment here"
+						id="floatingTextarea2" name="text" style="height: 100px" required></textarea>
+					<label for="floatingTextarea2">글 내용</label>
+				</div>
+				<div class="col-10">
+				</div>
+				<div class="col-2">
+					<button type="submit" class="btn btn-primary">제출</button>
+					<button type="reset" class="btn btn-primary">취소</button>
+					<a href="./NoticeBoardController"><button type="button" class="btn btn-primary">나가기</button></a>
+				</div>
+			</form>
 		</div>
 	</div>
 	<%@ include file="./template/footer.jspf" %>

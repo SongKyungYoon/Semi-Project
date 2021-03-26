@@ -29,7 +29,7 @@ public class InsertController extends HttpServlet{
 		RequestDispatcher rd=req.getRequestDispatcher("currinsert.jsp");
 		rd.forward(req, resp);
 		if(req.getSession().getAttribute("ID")==null ||
-				req.getSession().getAttribute("NAME")!=null ||
+				req.getSession().getAttribute("NAME")==null ||
 				!req.getSession().getAttribute("POSITION").equals("¿µ¾÷"))
 			resp.sendRedirect("currlist.bit");
 	}
