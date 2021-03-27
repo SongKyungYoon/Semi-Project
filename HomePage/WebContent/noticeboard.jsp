@@ -45,11 +45,7 @@ a {
 			</div>
 			<div class="col-6 col-md-3">
 				<h6>
-					<div class="col-6 col-md-3">
-						<h6>
-							<a href="SeongJeogController" class="link-primary">성적확인</a>
-						</h6>
-					</div>
+					<a href="SeongJeogController" class="link-primary">성적확인</a>
 				</h6>
 			</div>
 			<div class="col-6 col-md-3">
@@ -80,7 +76,6 @@ a {
 							<td>${n.date}</td>
 						</tr>
 					</c:forEach>
-
 				</tbody>
 			</table>
 		</div>

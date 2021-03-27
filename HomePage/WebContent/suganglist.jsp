@@ -48,38 +48,41 @@
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
-	<table>
-		<thead>
-			<tr>
-				<th>번호</th>
-				<th>신청날짜</th>
-				<th>이름</th>
-				<th>신청강좌</th>
-				<th>생년월일</th>
-				<th>연락처</th>
-				<th>이메일</th>
-				<th>연락여부</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${list }" var="bean">
-				<tr>
-					<td>${bean.num }</td>
-					<td>${bean.nalja }</td>
-					<td>${bean.name }</td>
-					<td>${bean.sub }</td>
-					<td>${bean.date }</td>
-					<td>${bean.pnum }</td>
-					<td>${bean.email }</td>
-					<td>${bean.check }</td>
-					<td>
-						<button class="check" name="check" value="num=${bean.num }&check=${bean.check }">연락확인</button>
-						<button class="delete" name="delete"value="num=${bean.num }">삭제</button>
-					</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+<div class="container">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">번호</th>
+      <th scope="col">신청날짜</th>
+      <th scope="col">이름</th>
+      <th scope="col">신청강좌</th>
+      <th scope="col">생년월일</th>
+	  <th scope="col">연락처</th>
+	  <th scope="col">이메일</th>
+      <th scope="col">연락여부</th>
+    </tr>
+  </thead>
+  <tbody>
+  <c:forEach items="${list }" var="bean">
+    <tr>
+      <th>${bean.num }</th>
+	  <td>${bean.nalja }</td>
+	  <td>${bean.name }</td>
+	  <td>${bean.sub }</td>
+	  <td>${bean.date }</td>
+	  <td>${bean.pnum }</td>
+	  <td>${bean.email }</td>
+      <td>${bean.check }</td>
+      <td>
+		<button class="check" name="check" value="num=${bean.num }&check=${bean.check }">연락확인</button>
+		<button class="delete" name="delete"value="num=${bean.num }">삭제</button>
+	  </td>
+    </tr>
+  </c:forEach>
+  </tbody>
+</table>
+</div>
 	<%@ include file="./template/footer.jspf" %>
 </body>
 </html>

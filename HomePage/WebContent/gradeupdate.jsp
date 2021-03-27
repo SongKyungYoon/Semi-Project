@@ -16,36 +16,43 @@
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
-	<c:set var="bean" value="${gradeDetail }"></c:set>
+<div class="container">
 	<form method="POST">
-		<div>
-			<label>번호</label>
-			<input type="text" name="num" readonly="readonly" value="${gradeDetail.num }"/>
+	<div class="row">
+	<div class="col"></div>
+	<div class="col-7">
+	<c:set var="bean" value="${gradeDetail }"></c:set>
+			<c:set var="bean" value="${gradeDetail }"></c:set>
+		  <div class="form-group">
+		    <label for="num">번호</label>
+		    <input type="text" class="form-control controldeco" name="num" id="num" value="${gradeDetail.num }">
+		  </div>
+		  <div class="form-group">
+		    <label for="group">반</label>
+			<input type="text" class="form-control controldeco" name="group" value="${gradeDetail.group }"/>		 
+		  </div>
+		  <div class="form-group">
+		    <label for="stuname">학생명</label>
+			<input type="text" class="form-control controldeco" name="stuname" value="${gradeDetail.stuname }"/>
+		  </div>
+		  <div class="form-group">
+		    <label for="java">java</label>
+			<input type="text" class="form-control controldeco" name="java" value="${gradeDetail.java }"/>
+		  </div>
+		  <div class="form-group">
+		    <label for="database">database</label>
+			<input type="text" class="form-control controldeco" name="database" value="${gradeDetail.database }"/>
+		  </div>
+		  <div class="form-group">
+		    <label for="framework">framework</label>
+			<input type="text" class="form-control controldeco" name="framework" value="${gradeDetail.framework }"/>
+		  </div>
+		  <button type="submit" class="btn btn-primary">입력</button>
+		</form>
 		</div>
-		<div>
-			<label>반</label>
-			<input type="text" name="group" value="${gradeDetail.group }"/>
+		<div class="col"></div>
 		</div>
-		<div>
-			<label>학생명</label>
-			<input type="text" name="stuname" value="${gradeDetail.stuname }"/>
-		</div>
-		<div>
-			<label>java</label>
-			<input type="text" name="java" value="${gradeDetail.java }"/>
-		</div>
-		<div>
-			<label>database</label>
-			<input type="text" name="database" value="${gradeDetail.database }"/>
-		</div>
-		<div>
-			<label>framework</label>
-			<input type="text" name="framework" value="${gradeDetail.framework }"/>
-		</div>
-        <div>
-        	<button>입력</button>
-        </div>
-	</form>
-	<%@ include file="./template/footer.jspf" %>
+	</div>
+<%@ include file="./template/footer.jspf" %>
 </body>
 </html>

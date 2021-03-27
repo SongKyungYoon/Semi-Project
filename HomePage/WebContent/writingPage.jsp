@@ -50,7 +50,7 @@
 				<div class="col-2">
 					<button type="submit" class="btn btn-primary">제출</button>
 					<button type="reset" class="btn btn-primary">취소</button>
-					<a href="./NoticeBoardController"><button type="button" class="btn btn-primary">나가기</button></a>
+					<a href="./NoticeBoardController" role="button"  ><button type="button" class="btn btn-primary">나가기</button></a>
 				</div>
 			</form>
 		</div>

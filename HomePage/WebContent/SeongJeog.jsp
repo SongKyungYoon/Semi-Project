@@ -7,17 +7,28 @@
 <meta charset="UTF-8">
 <title>SeongJeogPage</title>
 </head>
-<body>
+<body >
 <%@ include file="./template/header.jspf" %>
 
-	<c:set var="dbData" value="${dbData }"></c:set>
-	이름 : ${dbData.name }	<br/>
-	반 : ${dbData.group }<br/>
-	Java : ${dbData.java }<br/>
-	DataBase : ${dbData.database }<br/>
-	FrameWork : ${dbData.framework }
-
-	<a href="MainPage.jsp"><button type="button" >확인</button></a>
+<div class="container">
+	<div class="row">
+	<div class="col"></div>
+	<div class="col-6">
+		<c:set var="dbData" value="${dbData }"></c:set>
+		<ul class="list-group">
+	      <li class="list-group-item col-10">이름 : ${dbData.name }</li>
+		  <li class="list-group-item col-10">반 : ${dbData.group }</li>
+		  <li class="list-group-item col-10">Java : ${dbData.java }</li>
+		  <li class="list-group-item col-10">DataBase : ${dbData.database }</li>
+		  <li class="list-group-item col-10">FrameWork : ${dbData.framework }</li>
+		  <li class="list-group-item col-10"><a href="MainPage.jsp"><button type="button" class="btn btn-primary">확인</button></a></li>
+		</ul>
+		</div>
+	<div class="col"></div>
+	</div>
+</div>
+ 
+	
 	<%@ include file="./template/footer.jspf" %>
 </body>
 </html>

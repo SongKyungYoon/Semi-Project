@@ -17,7 +17,7 @@
 <%@ include file="./template/header.jspf" %>
 	<form method="POST">
 		<div>
-			<label>반</label>
+			<label>반반반반반</label>
 			<input type="text" name="group"/>
 		</div>
 		<div>
