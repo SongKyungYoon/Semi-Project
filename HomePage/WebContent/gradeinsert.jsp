@@ -15,31 +15,37 @@
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
-	<form method="POST">
-		<div>
-			<label>반</label>
-			<input type="text" name="group"/>
-		</div>
-		<div>
-			<label>학생명</label>
-			<input type="text" name="stuname"/>
-		</div>
-		<div>
-			<label>java</label>
-			<input type="text" name="java"/>
-		</div>
-		<div>
-			<label>database</label>
-			<input type="text" name="database"/>
-		</div>
-		<div>
-			<label>framework</label>
-			<input type="text" name="framework"/>
-		</div>
-        <div>
-        	<button>입력</button>
-        </div>
+<div class="container">
+	<form method="post">
+	<div class="row">
+	<div class="col"></div>
+	<div class="col-7">
+	  <div class="form-group">
+	    <label >반</label>
+	    <input type="text" class="form-control" name="group">
+	  </div>
+	  <div class="form-group">
+	    <label >학생명</label>
+	    <input type="text" class="form-control" name="stuname">
+	  </div>
+	  <div class="form-group">
+	    <label >java</label>
+	    <input type="text" class="form-control" name="java">
+	  </div>
+	  <div class="form-group">
+	    <label >database</label>
+	    <input type="text" class="form-control" name="database">
+	  </div>
+	  <div class="form-group">
+	    <label >framework</label>
+	    <input type="text" class="form-control" name="framework">
+	  </div>
+	  <button type="submit" class="btn btn-primary">Submit</button>
 	</form>
+	</div>
+	<div class="col"></div>
+	</div>
+</div>
 	<%@ include file="./template/footer.jspf" %>
 </body>
 </html>

@@ -13,60 +13,67 @@
 		 CKEDITOR.replace( 'editor1' );
 	});
 </script>
+
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
-	<c:set var="bean" value="${gradeDetail }"></c:set>
-	<form method="POST">
-		<div>
-			<label>번호</label>
-			<input type="text" name="num" readonly="readonly" value="${gradeDetail.num }"/>
-		</div>
-		<div>
-			<label>반</label>
-			<input type="text" name="group" readonly="readonly" value="${gradeDetail.group }"/>
-		</div>
-		<div>
-			<label>학생명</label>
-			<input type="text" name="stuname" readonly="readonly" value="${gradeDetail.stuname }"/>
-		</div>
-		<div>
-			<label>java</label>
-			<c:choose>
-			<c:when test="${gradeDetail.java == 0}">
-			<input type="text" name="java" value="${gradeDetail.java }"/>
-   			</c:when>
-			<c:otherwise>
-			<input type="text" name="java" readonly="readonly" value="${gradeDetail.java }"/>
-			</c:otherwise>
+<div class="container-md">
+ <div class="row">
+	<div class="col"></div>
+		<div class="col-7">
+			<form method="POST">
+			<c:set var="bean" value="${gradeDetail }"></c:set>
+		  <div class="form-group">
+		    <label for="num">번호</label>
+		    <input type="text" class="form-control controldeco" name="num" id="num" value="${gradeDetail.num }">
+		  </div>
+		  <div class="form-group">
+		    <label for="group">반</label>
+		    <input type="text" class="form-control controldeco" name="group" id="group" value="${gradeDetail.group }">
+		  </div>
+		  <div class="form-group">
+		    <label for="stuname">학생명</label>
+		    <input type="text" class="form-control controldeco" name="stuname" id="stuname" value="${gradeDetail.stuname }">
+		  </div>
+		  <div class="form-group">
+		    <label for="num">java</label>
+		    <c:choose>
+				<c:when test="${gradeDetail.java == 0}">
+					<input type="text" class="form-control " name="java" id="java" value="${gradeDetail.java }"/>
+		   		</c:when>
+		   		<c:otherwise>
+					<input type="text" class="form-control controldeco" name="java" readonly="readonly" value="${gradeDetail.java }"/>
+				</c:otherwise>
 			</c:choose>
-		</div>
-		<div>
-			<label>database</label>
-			<c:choose>
-			<c:when test="${gradeDetail.database == 0}">
-			<input type="text" name="database" value="${gradeDetail.database }"/>
-   			</c:when>
-			<c:otherwise>
-			<input type="text" name="database"  readonly="readonly" value="${gradeDetail.database }"/>
-			</c:otherwise>
+		  </div>
+		  <div class="form-group">
+		    <label for="database">database</label>
+		    <c:choose>
+				<c:when test="${gradeDetail.java == 0}">
+					<input type="text" class="form-control" name="database" id="database" value="${gradeDetail.database }"/>
+		   		</c:when>
+		   		<c:otherwise>
+					<input type="text" class="form-control controldeco" name="database" readonly="readonly" value="${gradeDetail.database }"/>
+				</c:otherwise>
 			</c:choose>
-		</div>
-		<div>
-			<label>framework</label>
-			<c:choose>
-			<c:when test="${gradeDetail.framework == 0}">
-			<input type="text" name="framework" value="${gradeDetail.framework }"/>
-   			</c:when>
-			<c:otherwise>
-			<input type="text" name="framework" readonly="readonly" value="${gradeDetail.framework }"/>
-			</c:otherwise>
+		  </div>
+		  <div class="form-group">
+		    <label for="database">framework</label>
+		    <c:choose>
+				<c:when test="${gradeDetail.java == 0}">
+					<input type="text" class="form-control" name="framework" id="framework" value="${gradeDetail.framework }"/>
+		   		</c:when>
+		   		<c:otherwise>
+					<input type="text" class="form-control controldeco" name="framework" readonly="readonly" value="${gradeDetail.framework }"/>
+				</c:otherwise>
 			</c:choose>
-		</div>
-        <div>
-        	<button>입력</button>
-        </div>
-	</form>
-	<%@ include file="./template/footer.jspf" %>
+		  </div>
+		  <button type="submit" class="btn btn-primary">입력</button>
+		</form>
+	  </div>
+	<div class="col"></div>
+	</div>
+</div>
+<%@ include file="./template/footer.jspf" %>
 </body>
 </html>
