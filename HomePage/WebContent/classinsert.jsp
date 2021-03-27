@@ -15,23 +15,25 @@
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
-	<form method="POST">
-		<div>
-			<label>반</label>
-			<input type="text" name="group"/>
-		</div>
-		<div>
-			<label>강사</label>
-			<input type="text" name="gangsa"/>
-		</div>
-		<div>
-			<label>기간</label>
-			<input type="text" name="period"/>
-		</div>
-        <div>
-        	<button>입력</button>
-        </div>
-	</form>
+	<div class="container">
+		<form method="POST">
+			<div>
+				<label>반</label>
+				<input type="text" name="group"/>
+			</div>
+			<div>
+				<label>강사</label>
+				<input type="text" name="gangsa"/>
+			</div>
+			<div>
+				<label>기간</label>
+				<input type="text" name="period"/>
+			</div>
+	        <div>
+	        	<button>입력</button>
+	        </div>
+		</form>
+	</div>
 	<%@ include file="./template/footer.jspf" %>
 </body>
 </html>

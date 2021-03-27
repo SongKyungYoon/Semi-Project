@@ -15,26 +15,28 @@
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
-	<form method="POST">
-		<div>
-			<label>회사</label>
-			<input type="text" name="coname"/>
-		</div>
-		<div>
-			<label>포지션</label>
-			<input type="text" name="coposition"/>
-		</div>
-		<div>
-			<label>마감일</label>
-			<input type="text" name="deadline"/>
-		</div>
-		<textarea name="content" id="editor1" rows="10" cols="80">
-                내용을 입력하세요.
-        </textarea>
-        <div>
-        	<button>입력</button>
-        </div>
-	</form>
+	<div class="container">
+		<form method="POST">
+			<div>
+				<label>회사</label>
+				<input type="text" name="coname"/>
+			</div>
+			<div>
+				<label>포지션</label>
+				<input type="text" name="coposition"/>
+			</div>
+			<div>
+				<label>마감일</label>
+				<input type="text" name="deadline"/>
+			</div>
+			<textarea name="content" id="editor1" rows="10" cols="80">
+	                내용을 입력하세요.
+	        </textarea>
+	        <div>
+	        	<button>입력</button>
+	        </div>
+		</form>
+	</div>
 	<%@ include file="./template/footer.jspf" %>
 </body>
 </html>
