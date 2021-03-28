@@ -146,6 +146,7 @@
 <body>
 <%@ include file="./template/header.jspf" %>
 <c:set var="bean" value="${currDetail }"></c:set>
+<div class="container">
 	<table>
 		<tbody>
 			<tr><td>${bean.sub }</td></tr>
@@ -157,35 +158,40 @@
 	<label>${bean.content }</label>
 	
 	<form action="#" method="post">
-		<input type="hidden" value="${bean.sub }" name="sub"/>
-		<div>
-			<label for="name">이름</label>
-			<input type="text" name="name" value="이름을 입력하세요" class="name"/>
-		</div>
-		<div>
-			<label for="date">생년월일</label>
-			<input type="date" name="date" value="2000-01-01"/>
-		</div>
-		<div>
-			<label>연락처</label>
-			<input type="text" class="number" name="number1"/> 
-			<input type="text" class="number" name="number2"/> 
-			<input type="text" class="number" name="number3"/> 
-		</div>
-		<div>
-			<label>이메일</label>
-			<input type="email" class="email" name="email" value="이메일을 입력하세요"/> 
-		</div>
-		<div>
-			<button type="submit">수강신청하기</button>
-		</div>
+		<ul class="list-group">
+			<li class="list-group-item">
+				<input type="hidden" value="${bean.sub }" name="sub"/>
+			</li>
+			<li class="list-group-item">
+				<label for="name">이름</label>
+				<input type="text" name="name" value="이름을 입력하세요" class="name"/>
+			</li>
+			<li class="list-group-item">
+				<label for="date">생년월일</label>
+				<input type="date" name="date" value="2000-01-01"/>
+			</li>
+			<li class="list-group-item">
+				<label>연락처</label>
+				<input type="text" class="number" name="number1"/> 
+				<input type="text" class="number" name="number2"/> 
+				<input type="text" class="number" name="number3"/> 
+			</li>
+			<li class="list-group-item">
+				<label>이메일</label>
+				<input type="email" class="email" name="email" value="이메일을 입력하세요"/> 
+			</li>
+			<li class="list-group-item">
+				<button type="submit" class="btn btn-primary">수강신청하기</button>
+			</li>
+		</ul>
 	</form>
 	<div>
 		<c:if test="${ not empty ID}" >
 		<c:if test="${POSITION =='영업' }">
-		<button type="button" class="delete">게시물 삭제</button>
+		<button type="button" class="delete btn btn-primary">게시물 삭제</button>
 		</c:if>
 		</c:if>
+	</div>
 	</div>
 	<%@ include file="./template/footer.jspf" %>
 </body>

@@ -33,24 +33,24 @@
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
-<c:set var="bean" value="${ebbDetail }"></c:set>
-	<table>
-		<tbody>
-			<tr><td>${bean.coname }</td></tr>
-			<tr><td>게시일	│${bean.nalja }</td></tr>
-			<tr><td>마감일	│${bean.deadline }</td></tr>
-			<tr><td>포지션	│${bean.coposition }</td></tr>
-			<tr><td>조회수	│${bean.count }</td></tr>
-			<tr><td>작성자	│${bean.POSITION }</td></tr>
-		</tbody>
-	</table>
-	<div>${bean.content }</div>
-	<div>
-		<c:if test="${ not empty ID}" >
-		<c:if test="${POSITION =='취업' }">
-		<button type="button" class="delete">게시물 삭제</button>
-		</c:if>
-		</c:if>
+	<div class="container">
+		<c:set var="bean" value="${ebbDetail }"></c:set>
+			<ul class="list-group">
+					<li class="list-group-item">${bean.coname }</li>
+					<li class="list-group-item">게시일	│${bean.nalja }</li>
+					<li class="list-group-item">마감일	│${bean.deadline }</li>
+					<li class="list-group-item">포지션	│${bean.coposition }</li>
+					<li class="list-group-item">조회수	│${bean.count }</li>
+					<li class="list-group-item">작성자	│${bean.POSITION }</li>
+			</ul>
+			<div>${bean.content }</div>
+			<div>
+				<c:if test="${ not empty ID}" >
+				<c:if test="${POSITION =='취업' }">
+				<button type="button" class="delete">게시물 삭제</button>
+				</c:if>
+				</c:if>
+			</div>
 	</div>
 	<%@ include file="./template/footer.jspf" %>
 </body>

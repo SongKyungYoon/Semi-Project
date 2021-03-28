@@ -39,10 +39,10 @@
 					<td>${bean.POSITION }</td>
 			</c:if>
 			</c:if>
-					<td>${bean.group }df</td>
-					<td>${bean.stuname }df</td>
-					<td>${bean.java }df</td>
-					<td>${bean.database }df</td>
+					<td>${bean.group }</td>
+					<td>${bean.stuname }</td>
+					<td>${bean.java }</td>
+					<td>${bean.database }</td>
 					<td>${bean.framework }</td>
 					<c:if test="${ not empty ID}" >
 					<c:if test="${POSITION =='행정' }">

@@ -17,23 +17,25 @@
 <%@ include file="./template/header.jspf" %>
 	<div class="container">
 		<form method="POST">
-			<div>
-				<label>회사</label>
-				<input type="text" name="coname"/>
+			<div class="input-group flex-nowrap">
+				<label class="input-group-text">회사</label>
+				<input type="text" class="form-control" name="coname"/>
 			</div>
-			<div>
-				<label>포지션</label>
-				<input type="text" name="coposition"/>
-			</div>
-			<div>
-				<label>마감일</label>
-				<input type="text" name="deadline"/>
+			<div class="form-row input-group flex-nowrap">
+				<div class="col input-group flex-nowrap">
+					<label class="input-group-text">포지션</label>
+					<input type="text" class="form-control" name="coposition"/>
+				</div>
+				<div class="col input-group flex-nowrap">
+					<label class="input-group-text">마감일</label>
+					<input type="date" class="form-control" name="deadline"/>
+				</div>
 			</div>
 			<textarea name="content" id="editor1" rows="10" cols="80">
 	                내용을 입력하세요.
 	        </textarea>
 	        <div>
-	        	<button>입력</button>
+	        	<button type="button" class="btn btn-primary btn-lg btn-block">입       력</button>
 	        </div>
 		</form>
 	</div>

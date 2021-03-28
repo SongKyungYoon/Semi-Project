@@ -17,21 +17,23 @@
 <%@ include file="./template/header.jspf" %>
 	<div class="container">
 		<form method="POST">
-			<div>
-				<label>반</label>
-				<input type="text" name="group"/>
-			</div>
-			<div>
-				<label>강사</label>
-				<input type="text" name="gangsa"/>
-			</div>
-			<div>
-				<label>기간</label>
-				<input type="text" name="period"/>
-			</div>
-	        <div>
-	        	<button>입력</button>
-	        </div>
+			<ul class="list-group">
+				<li class="list-group-item">
+					<label>반</label>
+					<input type="text" name="group"/>
+				</li>
+				<li class="list-group-item">
+					<label>강사</label>
+					<input type="text" name="gangsa"/>
+				</li>
+				<li class="list-group-item">
+					<label>기간</label>
+					<input type="text" name="period"/>
+				</li>
+		        <li class="list-group-item">
+		        	<button type="button" class="btn btn-primary btn-lg btn-block">입력</button>
+		        </li>
+	        </ul>
 		</form>
 	</div>
 	<%@ include file="./template/footer.jspf" %>
