@@ -15,16 +15,35 @@
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
-	<div>
-		글쓴이 : ${sessionScope.detail.writer}<br>
-		아이디: ${sessionScope.detail.id}<br>
-		글 제목 : ${sessionScope.detail.title}<br>
-		글 내용 : ${sessionScope.detail.content}<br>
+	<div class="container">
+		<div class="row">
+			<table class="table">
+				<thead>
+					<tr class="table-active">
+					 <th scope="col" style="width: 60%">
+						글 제목 : ${sessionScope.detail.title}<br>
+						글쓴이 : ${sessionScope.detail.writer}<br>
+						아이디: ${sessionScope.detail.id}<br>
+					</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							글 내용 : ${sessionScope.detail.content}<br>
+						</td>
+					</tr>
+				</tbody>
+				<tr>
+					<td>
+						<a class="btn btn-primary" href="noticeboard.jsp" role="button">목 록</a>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 	
-	<div>
-		<a class="btn btn-primary" href="noticeboard.jsp" role="button">Link</a>
-	</div>
+	
 	<%@ include file="./template/footer.jspf" %>
 </body>
 </html>
