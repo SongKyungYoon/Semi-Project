@@ -77,10 +77,10 @@
 							<a class="nav-link active" href="#">찾아오는길</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="classlist.jsp">교육과정</a>
+							<a class="nav-link" href="currlist.bit">교육과정</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="emplist.jsp">창업지원센터</a>
+							<a class="nav-link" href="emplist.bit">창업지원센터</a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDrop" data-toggle="dropdown"> 게시판</a>

@@ -37,9 +37,9 @@ public class EbbDao {
 			while(rs.next()) {
 				EbbDto bean=new EbbDto();
 				bean.setNum(rs.getInt("num"));
-				bean.setID(rs.getString("ID"));
-				bean.setNAME(rs.getString("NAME"));
-				bean.setPOSITION(rs.getString("POSITION"));
+				bean.setId(rs.getString("id"));
+				bean.setName(rs.getString("name"));
+				bean.setPosition(rs.getString("position"));
 				bean.setConame(rs.getString("coname"));
 				bean.setNalja(rs.getDate("nalja"));
 				bean.setDeadline(rs.getString("deadline"));
@@ -81,7 +81,7 @@ public class EbbDao {
 				dto.setDeadline(rs.getString("deadline"));
 				dto.setCoposition(rs.getString("coposition"));
 				dto.setCount(rs.getInt("count"));
-				dto.setPOSITION(rs.getString("POSITION"));
+				dto.setPosition(rs.getString("position"));
 				dto.setContent(rs.getString("content"));
 			}
 		} catch (ClassNotFoundException e) {
@@ -103,15 +103,15 @@ public class EbbDao {
 	}
 	
 	
-	public void insertList(String ID,String NAME,String POSITION,String coname,String content,String deadline,String coposition) {
-		String sql="insert into ebb (ID,NAME,POSITION,coname,content,deadline,coposition,nalja) values(?,?,?,?,?,?,?,now())";
+	public void insertList(String id,String name,String position,String coname,String content,String deadline,String coposition) {
+		String sql="insert into ebb (id,name,position,coname,content,deadline,coposition,nalja) values(?,?,?,?,?,?,?,now())";
 		try {
 			Class.forName(driver);
 			conn=DriverManager.getConnection(url,user,password);
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, ID);
-			pstmt.setString(2, NAME);
-			pstmt.setString(3, POSITION);
+			pstmt.setString(1, id);
+			pstmt.setString(2, name);
+			pstmt.setString(3, position);
 			pstmt.setString(4, coname);
 			pstmt.setString(5, content);
 			pstmt.setString(6, deadline);

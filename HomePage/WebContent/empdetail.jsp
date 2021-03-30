@@ -41,13 +41,13 @@
 			<tr><td>마감일	│${bean.deadline }</td></tr>
 			<tr><td>포지션	│${bean.coposition }</td></tr>
 			<tr><td>조회수	│${bean.count }</td></tr>
-			<tr><td>작성자	│${bean.POSITION }</td></tr>
+			<tr><td>작성자	│${bean.position }</td></tr>
 		</tbody>
 	</table>
 	<div>${bean.content }</div>
 	<div>
 		<c:if test="${ not empty ID}" >
-		<c:if test="${POSITION =='취업' }">
+		<c:if test="${position =='취업' }">
 		<button type="button" class="delete">게시물 삭제</button>
 		</c:if>
 		</c:if>

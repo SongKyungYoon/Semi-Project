@@ -14,11 +14,6 @@
 	rel="stylesheet"
 	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 	crossorigin="anonymous">
-<style type="text/css">
-a {
-	text-decoration: none;
-}
-</style>
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>

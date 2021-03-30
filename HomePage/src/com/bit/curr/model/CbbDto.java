@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class CbbDto {
 	private int num,delete;
-	private String ID,NAME,POSITION,sub,period,qual,content;
+	private String id,name,position,sub,period,qual,content;
 	private Date nalja,open;
 	CbbDto(){}
 	public int getNum() {
@@ -19,23 +19,23 @@ public class CbbDto {
 	public void setDelete(int delete) {
 		this.delete = delete;
 	}
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
-	public void setID(String iD) {
-		ID = iD;
+	public void setId(String id) {
+		id = id;
 	}
-	public String getNAME() {
-		return NAME;
+	public String getName() {
+		return name;
 	}
-	public void setNAME(String nAME) {
-		NAME = nAME;
+	public void setName(String name) {
+		name = name;
 	}
-	public String getPOSITION() {
-		return POSITION;
+	public String getPosition() {
+		return position;
 	}
-	public void setPOSITION(String pOSITION) {
-		POSITION = pOSITION;
+	public void setPosition(String position) {
+		position = position;
 	}
 	public String getSub() {
 		return sub;

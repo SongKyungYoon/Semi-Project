@@ -38,9 +38,9 @@ public class CbbDao {
 			while(rs.next()) {
 				com.bit.curr.model.CbbDto bean=new CbbDto();
 				bean.setNum(rs.getInt("num"));
-				bean.setID(rs.getString("ID"));
-				bean.setNAME(rs.getString("NAME"));
-				bean.setPOSITION(rs.getString("POSITION"));
+				bean.setId(rs.getString("id"));
+				bean.setName(rs.getString("name"));
+				bean.setPosition(rs.getString("position"));
 				bean.setSub(rs.getString("sub"));
 				bean.setOpen(rs.getDate("open"));
 				bean.setPeriod(rs.getString("period"));
@@ -99,15 +99,15 @@ public class CbbDao {
 		return dto;
 	}
 	
-	public void insertList(String ID,String NAME,String POSITION,String sub,Date open,String period,String qual,String content) {
-		String sql="insert into cbb (ID,NAME,POSITION,sub,open,period,qual,content,nalja) values(?,?,?,?,?,?,?,?,now())";
+	public void insertList(String id,String name,String position,String sub,Date open,String period,String qual,String content) {
+		String sql="insert into cbb (id,name,position,sub,open,period,qual,content,nalja) values(?,?,?,?,?,?,?,?,now())";
 		try {
 			Class.forName(driver);
 			conn=DriverManager.getConnection(url,user,password);
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, ID);
-			pstmt.setString(2, NAME);
-			pstmt.setString(3, POSITION);
+			pstmt.setString(1, id);
+			pstmt.setString(2, name);
+			pstmt.setString(3, position);
 			pstmt.setString(4, sub);
 			pstmt.setDate(5, open);
 			pstmt.setString(6, period);

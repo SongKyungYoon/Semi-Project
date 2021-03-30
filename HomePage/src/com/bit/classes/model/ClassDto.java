@@ -4,19 +4,19 @@ import java.sql.Date;
 
 public class ClassDto {
 	private int num,delete;
-	private String ID,NAME,POSITION,group,gangsa,period;
+	private String id,name,position,group,gangsa,period;
 	private Date nalja;
 	
 	public ClassDto() {}
 
-	public ClassDto(int num, int delete, String iD, String nAME, String pOSITION, String group, String gangsa,
+	public ClassDto(int num, int delete, String id, String name, String position, String group, String gangsa,
 			String period, Date nalja) {
 		super();
 		this.num = num;
 		this.delete = delete;
-		ID = iD;
-		NAME = nAME;
-		POSITION = pOSITION;
+		id = id;
+		name = name;
+		position = position;
 		this.group = group;
 		this.gangsa = gangsa;
 		this.period = period;
@@ -39,28 +39,28 @@ public class ClassDto {
 		this.delete = delete;
 	}
 
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
 
-	public void setID(String iD) {
-		ID = iD;
+	public void setId(String id) {
+		id = id;
 	}
 
-	public String getNAME() {
-		return NAME;
+	public String getName() {
+		return name;
 	}
 
-	public void setNAME(String nAME) {
-		NAME = nAME;
+	public void setName(String name) {
+		name = name;
 	}
 
-	public String getPOSITION() {
-		return POSITION;
+	public String getPosition() {
+		return position;
 	}
 
-	public void setPOSITION(String pOSITION) {
-		POSITION = pOSITION;
+	public void setPosition(String position) {
+		position = position;
 	}
 
 	public String getGroup() {
@@ -99,9 +99,9 @@ public class ClassDto {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
-		result = prime * result + ((NAME == null) ? 0 : NAME.hashCode());
-		result = prime * result + ((POSITION == null) ? 0 : POSITION.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((position == null) ? 0 : position.hashCode());
 		result = prime * result + delete;
 		result = prime * result + ((gangsa == null) ? 0 : gangsa.hashCode());
 		result = prime * result + ((group == null) ? 0 : group.hashCode());
@@ -120,20 +120,20 @@ public class ClassDto {
 		if (getClass() != obj.getClass())
 			return false;
 		ClassDto other = (ClassDto) obj;
-		if (ID == null) {
-			if (other.ID != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!ID.equals(other.ID))
+		} else if (!id.equals(other.id))
 			return false;
-		if (NAME == null) {
-			if (other.NAME != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!NAME.equals(other.NAME))
+		} else if (!name.equals(other.name))
 			return false;
-		if (POSITION == null) {
-			if (other.POSITION != null)
+		if (position == null) {
+			if (other.position != null)
 				return false;
-		} else if (!POSITION.equals(other.POSITION))
+		} else if (!position.equals(other.position))
 			return false;
 		if (delete != other.delete)
 			return false;
@@ -164,8 +164,8 @@ public class ClassDto {
 
 	@Override
 	public String toString() {
-		return "ClassDto [num=" + num + ", delete=" + delete + ", ID=" + ID + ", NAME=" + NAME + ", POSITION="
-				+ POSITION + ", group=" + group + ", gangsa=" + gangsa + ", period=" + period + ", nalja=" + nalja
+		return "ClassDto [num=" + num + ", delete=" + delete + ", id=" + id + ", name=" + name + ", position="
+				+ position + ", group=" + group + ", gangsa=" + gangsa + ", period=" + period + ", nalja=" + nalja
 				+ "]";
 	}
 	

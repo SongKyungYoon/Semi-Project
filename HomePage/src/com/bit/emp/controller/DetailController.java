@@ -1,4 +1,4 @@
-package com.bit.emp;
+package com.bit.emp.controller;
 
 import java.io.IOException;
 
@@ -10,18 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bit.emp.model.EbbDao;
 
-@WebServlet("/emplist.bit")
-public class ListController extends HttpServlet {
+@WebServlet("/empdetail.bit")
+public class DetailController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//ÀÓ½Ã¿ë
-		req.getSession().setAttribute("ID", "stxz00");
-		req.getSession().setAttribute("NAME", "ÀÌÇØ³²");
-		req.getSession().setAttribute("POSITION", "Ãë¾÷");
-		
 		EbbDao dao=new EbbDao();
-		req.setAttribute("ebbList", dao.ebbList()); 
-		req.getRequestDispatcher("emplist.jsp").forward(req, resp);
-	
+		int num=Integer.parseInt(req.getParameter("num"));
+		int count=Integer.parseInt(req.getParameter("count"));
+		dao.countEmp(num, count);
+		req.setAttribute("ebbDetail", dao.ebbDetail(num)); 
+		req.getRequestDispatcher("empdetail.jsp").forward(req, resp);
 	}
+	
 }

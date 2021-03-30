@@ -25,7 +25,7 @@
 			<c:set var="bean" value="${gradeDetail }"></c:set>
 		  <div class="form-group">
 		    <label for="num">번호</label>
-		    <input type="text" class="form-control controldeco" name="num" id="num" value="${gradeDetail.num }">
+		    <input type="text" class="form-control controldeco" name="num" id="num"  value="${gradeDetail.num }">
 		  </div>
 		  <div class="form-group">
 		    <label for="group">반</label>

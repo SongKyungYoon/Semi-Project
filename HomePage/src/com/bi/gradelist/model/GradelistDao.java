@@ -36,9 +36,9 @@ public class GradelistDao {
 			while(rs.next()) {
 				GradelistDto bean=new GradelistDto();
 				bean.setNum(rs.getInt("num"));
-				bean.setID(rs.getString("ID"));
-				bean.setNAME(rs.getString("NAME"));
-				bean.setPOSITION(rs.getString("POSITION"));
+				bean.setId(rs.getString("id"));
+				bean.setName(rs.getString("name"));
+				bean.setPosition(rs.getString("position"));
 				bean.setGroup(rs.getString("group"));
 				bean.setStuname(rs.getString("stuname"));
 				bean.setJava(rs.getInt("java"));
@@ -78,9 +78,9 @@ public class GradelistDao {
 			while(rs.next()) {
 				GradelistDto bean=new GradelistDto();
 				bean.setNum(rs.getInt("num"));
-				bean.setID(rs.getString("ID"));
-				bean.setNAME(rs.getString("NAME"));
-				bean.setPOSITION(rs.getString("POSITION"));
+				bean.setId(rs.getString("id"));
+				bean.setName(rs.getString("name"));
+				bean.setPosition(rs.getString("position"));
 				bean.setGroup(rs.getString("group"));
 				bean.setStuname(rs.getString("stuname"));
 				bean.setJava(rs.getInt("java"));
@@ -120,9 +120,9 @@ public class GradelistDao {
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
 				dto.setNum(rs.getInt("num"));
-				dto.setID(rs.getString("ID"));
-				dto.setNAME(rs.getString("NAME"));
-				dto.setPOSITION(rs.getString("POSITION"));
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setPosition(rs.getString("position"));
 				dto.setGroup(rs.getString("group"));
 				dto.setStuname(rs.getString("stuname"));
 				dto.setJava(rs.getInt("java"));
@@ -148,15 +148,14 @@ public class GradelistDao {
 		return dto;
 	}
 	
-	public void insertList(String ID,String NAME,String POSITION,String group,String stuname,int java,int database,int framework) {
-		String sql="INSERT INTO `lmsdb`.`gradelist` (`ID`, `NAME`, `POSITION`, `group`, `stuname`, `java`, `database`, `framework`) values(?,?,?,?,?,?,?,?)";
+	public void insertList(String id,String name,String position,String group,String stuname,int java,int database,int framework) {
+		String sql="INSERT INTO `lmsdb`.`gradelist` (`id`, `name`, `position`, `group`, `stuname`, `java`, `database`, `framework`) values(?,?,?,?,?,?,?,?)";
 		try {
 			Class.forName(driver);
 			conn=DriverManager.getConnection(url,user,password);
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, ID);
-			pstmt.setString(2, NAME);
-			pstmt.setString(3, POSITION);
+			pstmt.setString(1, id);
+			pstmt.setString(2, name);
 			pstmt.setString(4, group);
 			pstmt.setString(5,stuname);
 			pstmt.setInt(6, java);

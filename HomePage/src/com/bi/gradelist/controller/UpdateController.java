@@ -15,14 +15,11 @@ import com.bit.classes.model.ClassDao;
 public class UpdateController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getSession().setAttribute("ID", "stxz11");
-		req.getSession().setAttribute("NAME", "이해남");
-		req.getSession().setAttribute("POSITION", "행정");
 		
-		if(req.getSession().getAttribute("ID")==null ||
-				req.getSession().getAttribute("NAME")==null ||
-				!(req.getSession().getAttribute("POSITION").equals("행정")
-				|| req.getSession().getAttribute("POSITION").equals("강사")))
+		if(req.getSession().getAttribute("id")==null ||
+				req.getSession().getAttribute("name")==null ||
+				!(req.getSession().getAttribute("position").equals("행정")
+				|| req.getSession().getAttribute("position").equals("강사")))
 			resp.sendRedirect("index.jsp");
 		
 		int num=Integer.parseInt(req.getParameter("num"));

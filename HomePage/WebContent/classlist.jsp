@@ -9,13 +9,14 @@
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 </head>
 <body>
+<!-- position,name,id 소문자로 변경 -->
 <%@ include file="./template/header.jspf" %>
 	<table>
 		<thead>
 			<tr>
 				<th>번호</th>
-			<c:if test="${ not empty ID}" >
-			<c:if test="${POSITION =='행정' }">
+			<c:if test="${ not empty id}" >
+			<c:if test="${position =='행정' }">
 				<th>ID</th>
 				<th>이름</th>
 				<th>직책</th>
@@ -31,25 +32,25 @@
 			<c:forEach items="${classList }" var="bean">
 				<tr>
 					<td>${bean.num }</a></td>
-			<c:if test="${not empty ID}" >
-			<c:if test="${POSITION=='행정' }">
-					<td>${bean.ID }</td>
-					<td>${bean.NAME }</td>
-					<td>${bean.POSITION }</td>
+			<c:if test="${not empty id}" >
+			<c:if test="${position=='행정' }">
+					<td>${bean.id }</td>
+					<td>${bean.name }</td>
+					<td>${bean.position }</td>
 			</c:if>
 			</c:if>
-			<c:if test="${POSITION == '행정' || NAME == bean.gangsa}">
-					<td><a href="gradedetail.bit?group=${bean.group }&gangsa=${bean.gangsa }">${bean.group }</a></td>
-					<td><a href="gradedetail.bit?group=${bean.group }&gangsa=${bean.gangsa }">${bean.gangsa }</a></td>
-					<td><a href="gradedetail.bit?group=${bean.group }&gangsa=${bean.gangsa }">${bean.period }</a></td>
-					<td><a href="gradedetail.bit?group=${bean.group }&gangsa=${bean.gangsa }">${bean.nalja }</a></td>
+			<c:if test="${position == '행정' || name == bean.gangsa}">
+					<td>${bean.group }</td>
+					<td>${bean.gangsa }</td>
+					<td>${bean.period }</td>
+					<td>${bean.nalja }</td>
 					<td><a href="gradedetail.bit?group=${bean.group }&gangsa=${bean.gangsa }">자세히보기+</a></td>
 			</c:if>		
 					
-					<c:if test="${ not empty ID}" >
-					<c:if test="${POSITION =='행정' }">
-					<td><a href="classupdate.bit?num=${bean.num }">[수정하기]</a></td>
-					<td><a href="classdelete.bit?num=${bean.num }">[삭제하기]</a></td>
+					<c:if test="${ not empty id}" >
+					<c:if test="${position =='행정' }">
+						<td><a href="classupdate.bit?num=${bean.num }">[수정하기]</a></td>
+						<td><a href="classdelete.bit?num=${bean.num }">[삭제하기]</a></td>
 					</c:if>
 					</c:if>
 				</tr>
@@ -57,8 +58,8 @@
 		</tbody>
 	</table>
 	<div>
-		<c:if test="${ not empty ID}" >
-		<c:if test="${POSITION =='행정' }">
+		<c:if test="${ not empty id}" >
+		<c:if test="${position } =='행정' }">
 		<a href="classinsert.bit">[반개설하기]</a>
 		</c:if>
 		</c:if>

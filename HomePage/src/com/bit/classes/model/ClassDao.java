@@ -38,9 +38,9 @@ public class ClassDao {
 			while(rs.next()) {
 				ClassDto bean=new ClassDto();
 				bean.setNum(rs.getInt("num"));
-				bean.setID(rs.getString("ID"));
-				bean.setNAME(rs.getString("NAME"));
-				bean.setPOSITION(rs.getString("POSITION"));
+				bean.setId(rs.getString("id"));
+				bean.setName(rs.getString("name"));
+				bean.setPosition(rs.getString("position"));
 				bean.setGroup(rs.getString("group"));
 				bean.setGangsa(rs.getString("gangsa"));
 				bean.setPeriod(rs.getString("period"));
@@ -78,9 +78,9 @@ public class ClassDao {
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
 				dto.setNum(rs.getInt("num"));
-				dto.setID(rs.getString("ID"));
-				dto.setNAME(rs.getString("NAME"));
-				dto.setPOSITION(rs.getString("POSITION"));
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setPosition(rs.getString("position"));
 				dto.setGroup(rs.getString("group"));
 				dto.setGangsa(rs.getString("gangsa"));
 				dto.setPeriod(rs.getString("period"));
@@ -105,15 +105,15 @@ public class ClassDao {
 		return dto;
 	}
 	
-	public void insertList(String ID,String NAME,String POSITION,String group,String gangsa,String period) {
+	public void insertList(String id,String name,String position,String group,String gangsa,String period) {
 		String sql="INSERT INTO `lmsdb`.`class` (`ID`, `NAME`, `POSITION`, `group`, `gangsa`, `period`, `nalja`) values(?,?,?,?,?,?,now())";
 		try {
 			Class.forName(driver);
 			conn=DriverManager.getConnection(url,user,password);
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, ID);
-			pstmt.setString(2, NAME);
-			pstmt.setString(3, POSITION);
+			pstmt.setString(1, id);
+			pstmt.setString(2, name);
+			pstmt.setString(3, position);
 			pstmt.setString(4, group);
 			pstmt.setString(5, gangsa);
 			pstmt.setString(6, period);

@@ -10,11 +10,6 @@
 	rel="stylesheet"
 	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 	crossorigin="anonymous">
-	<style type="text/css">
-		a{
-			text-decoration: none;
-		}
-	</style>
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
@@ -25,20 +20,20 @@
 			</div>
 			<form class="row g-3" action="NoticeBoardController" method="post">
 				<div class="col-md-3">
-					<label for="inputWriter" class="form-label">글 쓴 이</label> <small style="color: red;">${requestScope.name}</small> <input
-						type="text" name="writer" class="form-control" id="inputWriter" placeholder="본인 이름을 적어주세요" required>
+					<label for="inputWriter" class="form-label">글 쓴 이</label> <small style="color: red;">${requestScope.name}</small> 
+					<input type="text" name="writer" class="form-control" id="inputWriter" placeholder="본인 이름을 적어주세요" required>
 				</div>
 				<div class="col-md-3">
 					<label for="inputId" class="form-label">아 이 디</label> <small style="color: red;">${requestScope.id}</small> <input
 						type="text" name="id" class="form-control" id="inputId" placeholder="로그인 계정을 입력해 주세요" required>
 				</div>
 				<div class="col-md-3">
-					<label for="inputContent" class="form-label">글 제목</label> <input
-						type="text" name="title" class="form-control" id="inputContent" required>
+					<label for="inputContent" class="form-label">글 제목</label> 
+					<input type="text" name="title" class="form-control" id="inputContent" required>
 				</div>
 				<div class="col-md-3">
-					<label for="inputDate" class="form-label">작성일자</label> <input
-						type="date" name="date" class="form-control" id="inputDate" required>
+					<label for="inputDate" class="form-label">작성일자</label> 
+					<input type="date" name="date" class="form-control" id="inputDate" required>
 				</div>
 				<div class="col-12 form-floating">
 					<textarea class="form-control" placeholder="Leave a comment here"

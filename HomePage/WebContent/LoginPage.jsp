@@ -8,10 +8,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <style type="text/css" rel="stylesheet">
 	#LoginForm{
-	
 		width: 500px;
 		margin: 10px auto;
-		
 	}
 	small{
 		color: red;
@@ -45,6 +43,10 @@
   			<div class="mb-3 form-check form-check-inline">
     			<input class="form-check-input" type="radio" name="position" value="행정" id="admin">
   				<label class="form-check-label" for="admin">행정</label>
+  			</div>
+  			<div class="mb-3 form-check form-check-inline">
+    			<input class="form-check-input" type="radio" name="position" value="취업" id="admin">
+  				<label class="form-check-label" for="admin">취업</label><!-- for,name수정필요 -->
   			</div>
   			<div>
   				<button type="submit" class="btn btn-primary" name="button" value="로그인">로그인</button>

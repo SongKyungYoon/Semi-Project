@@ -9,13 +9,14 @@
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 </head>
 <body>
+<!-- psition,name,id 소문자로 바꿈 -->
 <%@ include file="./template/header.jspf" %>
 	<table>
 		<thead>
 			<tr>
 				<th>번호</th>
-			<c:if test="${ not empty ID}" >
-			<c:if test="${POSITION =='행정' }">
+			<c:if test="${ not empty id}" >
+			<c:if test="${position =='행정' }">
 				<th>ID</th>
 				<th>작성자</th>
 				<th>직책</th>
@@ -32,11 +33,11 @@
 			<c:forEach items="${gradeDetail }" var="bean">
 				<tr>
 					<td>${bean.num }</td>
-			<c:if test="${not empty ID}" >
-			<c:if test="${POSITION =='행정' }">
-					<td>${bean.ID }</td>
-					<td>${bean.NAME }</td>
-					<td>${bean.POSITION }</td>
+			<c:if test="${not empty id}" >
+			<c:if test="${position =='행정' }">
+					<td>${bean.id }</td>
+					<td>${bean.name }</td>
+					<td>${bean.position }</td>
 			</c:if>
 			</c:if>
 					<td>${bean.group }</td>
@@ -44,8 +45,8 @@
 					<td>${bean.java }</td>
 					<td>${bean.database }</td>
 					<td>${bean.framework }</td>
-					<c:if test="${ not empty ID}" >
-					<c:if test="${POSITION =='강사' }">
+					<c:if test="${ not empty id}" >
+					<c:if test="${position =='강사' }">
 					<td><a href="gradeupdate2.bit?num=${bean.num }">[입력하기]</a></td>
 					</c:if>
 					</c:if>

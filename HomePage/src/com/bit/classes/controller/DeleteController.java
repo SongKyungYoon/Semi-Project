@@ -15,9 +15,11 @@ import com.sun.xml.internal.bind.v2.runtime.Location;
 public class DeleteController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		if(req.getSession().getAttribute("ID")==null ||
-				req.getSession().getAttribute("NAME")==null ||
-				!req.getSession().getAttribute("POSITION").equals("행정"))
+		
+		
+		if(req.getSession().getAttribute("id")==null ||
+				req.getSession().getAttribute("name")==null ||
+				!req.getSession().getAttribute("position").equals("행정"))
 			resp.sendRedirect("index.jsp");
 		
 		int num=Integer.parseInt(req.getParameter("num"));

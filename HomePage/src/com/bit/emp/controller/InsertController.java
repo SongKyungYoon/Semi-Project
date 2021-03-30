@@ -1,4 +1,4 @@
-package com.bit.emp;
+package com.bit.emp.controller;
 
 import java.io.IOException;
 
@@ -16,22 +16,22 @@ public class InsertController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getSession().setAttribute("ID", "stxz00");
-		req.getSession().setAttribute("NAME", "ÀÌÇØ³²");
-		req.getSession().setAttribute("POSITION", "Ãë¾÷");
+		req.getSession().setAttribute("id", "stxz00");
+		req.getSession().setAttribute("name", "ÀÌÇØ³²");
+		req.getSession().setAttribute("position", "Ãë¾÷");
 		RequestDispatcher rd=req.getRequestDispatcher("empinsert.jsp");
 		rd.forward(req, resp);
-		if(req.getSession().getAttribute("ID")==null ||
-				req.getSession().getAttribute("NAME")!=null ||
-				!req.getSession().getAttribute("POSITION").equals("Ãë¾÷"))
+		if(req.getSession().getAttribute("id")==null ||
+				req.getSession().getAttribute("name")!=null ||
+				!req.getSession().getAttribute("position").equals("Ãë¾÷"))
 			resp.sendRedirect("emplist.bit");
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			String ID=(String) req.getSession().getAttribute("ID");
-			String NAME=(String) req.getSession().getAttribute("NAME");
-			String POSITION=(String) req.getSession().getAttribute("POSITION");
+			String id=(String) req.getSession().getAttribute("id");
+			String name=(String) req.getSession().getAttribute("name");
+			String position=(String) req.getSession().getAttribute("position");
 			//System.out.println(ID+NAME+POSITION);
 			String coname=req.getParameter("coname");
 			String content=req.getParameter("content");
@@ -39,8 +39,7 @@ public class InsertController extends HttpServlet{
 			String coposition=req.getParameter("coposition");
 			//System.out.println(sub+content);
 			EbbDao dao=new EbbDao();
-			dao.insertList(ID, NAME, POSITION, coname, content, deadline, coposition);
-			
+			dao.insertList(id, name, position, coname, content, deadline, coposition);
 			resp.sendRedirect("emplist.bit");
 	}
 	

@@ -156,7 +156,7 @@
 	</table>
 	<label>${bean.content }</label>
 	
-	<form action="#" method="post">
+	<form action="InsertController" method="post">
 		<input type="hidden" value="${bean.sub }" name="sub"/>
 		<div>
 			<label for="name">이름</label>
@@ -181,8 +181,8 @@
 		</div>
 	</form>
 	<div>
-		<c:if test="${ not empty ID}" >
-		<c:if test="${POSITION =='영업' }">
+		<c:if test="${ not empty id}" >
+		<c:if test="${position =='영업' }">
 		<button type="button" class="delete">게시물 삭제</button>
 		</c:if>
 		</c:if>

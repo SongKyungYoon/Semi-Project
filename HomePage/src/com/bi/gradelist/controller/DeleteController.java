@@ -19,9 +19,9 @@ public class DeleteController extends HttpServlet{
 		int num=Integer.parseInt(req.getParameter("num"));
 		GradelistDao dao=new GradelistDao();
 		dao.deleteGrade(num);
-		if(req.getSession().getAttribute("ID")==null ||
-				req.getSession().getAttribute("NAME")==null ||
-				!req.getSession().getAttribute("POSITION").equals("행정"))
+		if(req.getSession().getAttribute("id")==null ||
+				req.getSession().getAttribute("name")==null ||
+				!req.getSession().getAttribute("position").equals("행정"))
 			resp.sendRedirect("index.jsp");
 		
 		req.getRequestDispatcher("gradedelete.jsp").forward(req, resp);

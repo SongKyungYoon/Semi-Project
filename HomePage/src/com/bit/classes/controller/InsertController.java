@@ -16,24 +16,25 @@ public class InsertController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		req.getRequestDispatcher("classinsert.jsp").forward(req, resp);
-		if(req.getSession().getAttribute("ID")==null ||
-				req.getSession().getAttribute("NAME")==null ||
-				!req.getSession().getAttribute("POSITION").equals("행정"))
+		if(req.getSession().getAttribute("id")==null ||
+				req.getSession().getAttribute("name")==null ||
+				!req.getSession().getAttribute("position").equals("행정"))
 			resp.sendRedirect("classlist.bit");
 		
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			String ID=(String) req.getSession().getAttribute("ID");
-			String NAME=(String) req.getSession().getAttribute("NAME");
-			String POSITION=(String) req.getSession().getAttribute("POSITION");
+			String id=(String) req.getSession().getAttribute("id");
+			String name=(String) req.getSession().getAttribute("name");
+			String position=(String) req.getSession().getAttribute("position");
 			String group=req.getParameter("group");
 			String gangsa=req.getParameter("gangsa");
 			String period=req.getParameter("period");
 			ClassDao dao=new ClassDao();
-			dao.insertList(ID, NAME, POSITION, group, gangsa, period);
+			dao.insertList(id, name, position, group, gangsa, period);
 			
 			resp.sendRedirect("classlist.bit");
 	}

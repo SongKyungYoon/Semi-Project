@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
+<!-- 이걸 모달로 바꾸기 -->
 <%@ include file="./template/header.jspf" %>
 	<div class="container-md container-fluid">
 		<div style="margin: 10px auto;">
@@ -16,8 +17,7 @@
  			<a class="btn btn-primary" href="RollCall?q=퇴실" role="button">퇴실</a>
  		</div>
  		<div>
- 			<c:if test="${not empty requestScope.today}">
- 				${requestScope.today}<br>
+ 			<c:if test="${not empty requestScope.today}">${requestScope.today}<br>
  				<a class="btn btn-primary" href="chulgyeollist?time=${requestScope.time }&attend=${requestScope.attend}" role="button">예</a>
  				<a class="btn btn-primary" href="MainPage.jsp" role="button">아니오</a>
  			</c:if>

@@ -30,5 +30,6 @@ public class InsertContoller extends HttpServlet{
 		SugangListDao dao=new SugangListDao();
 		dao.inputList(name, sub, date, pnum,email);
 		
+		
 	}
 }

@@ -5,12 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Main page</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-	<style type="text/css">
-		a{
-			text-decoration: none;
-		}
-	</style>
+<script type="text/javascript">
+	$(function(){
+		if(!(${sessionScope.position}).equals('영업')){
+			$('.aa').hide();
+		};
+	});
+</script>
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
@@ -26,10 +29,12 @@
 
   <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
   <div class="row" style="margin-top: 15px;">
-    <div class="col-6 col-md-3"><h6><a href="#" class="link-primary">강의확인</a></h6></div>
+    <div class="col-6 col-md-3"><h6><a href="currlist.bit" class="link-primary">강의확인</a></h6></div>
     <div class="col-6 col-md-3"><h6><a href="SeongJeogController" class="link-primary">성적확인</a></h6></div>
     <div class="col-6 col-md-3"><h6><a href="NoticeBoardController" class="link-primary">질문게시글</a></h6></div>
-    <div class="col-6 col-md-3"><h6><a href="#" class="link-primary">수강신청</a></h6></div>
+    <div class="col-6 col-md-3"><h6><a href="currdetail.jsp" class="link-primary">수강신청</a></h6></div>
+    <div class="col-6 col-md-3"><h6><a href="classlist.bit" class="link-primary">반 리스트</a></h6></div>
+    <div class="col-6 col-md-3 aa"><h6><a href="listsugang.bit" class="link-primary">수강 리스트</a></h6></div>
   </div>
 
 </div>

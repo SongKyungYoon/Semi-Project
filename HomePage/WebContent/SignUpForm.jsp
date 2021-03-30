@@ -58,6 +58,10 @@
       				<input class="form-check-input" type="radio" name="position" value="행정" id="admin">
       				<label class="form-check-label" for="admin">행정 </label>
     			</div>
+    			<div class="form-check form-check-inline">
+      				<input class="form-check-input" type="radio" name="position" value="취업" id="admin">
+      				<label class="form-check-label" for="admin">취업</label><!--id,for 수정필요 -->
+    			</div>
   			</div>
   			<div class="col-12">
     			<button type="submit" class="btn btn-primary" name="button" value="가입하기">가입하기</button>

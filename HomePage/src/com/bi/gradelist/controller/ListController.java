@@ -15,17 +15,14 @@ import com.bit.classes.model.ClassDao;
 public class ListController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getSession().setAttribute("ID", "stxz11");
-		req.getSession().setAttribute("NAME", "이해남");
-		req.getSession().setAttribute("POSITION", "행정");
 		
 		GradelistDao dao=new GradelistDao();
 		req.setAttribute("gradeList", dao.gradeList()); 
 		req.getRequestDispatcher("gradelist.jsp").forward(req, resp);
 		
-		if(req.getSession().getAttribute("ID")==null ||
-				req.getSession().getAttribute("NAME")==null ||
-				!req.getSession().getAttribute("POSITION").equals("행정"))
+		if(req.getSession().getAttribute("id")==null ||
+				req.getSession().getAttribute("name")==null ||
+				!req.getSession().getAttribute("position").equals("행정"))
 			resp.sendRedirect("index.jsp");
 	}
 }

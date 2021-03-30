@@ -3,16 +3,16 @@ package com.bit.emp.model;
 import java.sql.Date;
 
 public class EbbDto {
-	private String ID,NAME,POSITION,coname,content,deadline,coposition;
+	private String id,name,position,coname,content,deadline,coposition;
 	private Date nalja;
 	private int num,count,delete;
 	EbbDto(){}
-	public EbbDto(String iD, String nAME, String pOSITION, String coname, String content, String deadline,
+	public EbbDto(String id, String name, String position, String coname, String content, String deadline,
 			String coposition, Date nalja, int num, int count, int delete) {
 		super();
-		ID = iD;
-		NAME = nAME;
-		POSITION = pOSITION;
+		id = id;
+		name = name;
+		position = position;
 		this.coname = coname;
 		this.content = content;
 		this.deadline = deadline;
@@ -22,23 +22,23 @@ public class EbbDto {
 		this.count = count;
 		this.delete = delete;
 	}
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
-	public void setID(String iD) {
-		ID = iD;
+	public void setId(String id) {
+		id = id;
 	}
-	public String getNAME() {
-		return NAME;
+	public String getName() {
+		return name;
 	}
-	public void setNAME(String nAME) {
-		NAME = nAME;
+	public void setName(String name) {
+		name = name;
 	}
-	public String getPOSITION() {
-		return POSITION;
+	public String getPosition() {
+		return position;
 	}
-	public void setPOSITION(String pOSITION) {
-		POSITION = pOSITION;
+	public void setPosition(String position) {
+		position = position;
 	}
 	public String getConame() {
 		return coname;
@@ -92,9 +92,9 @@ public class EbbDto {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
-		result = prime * result + ((NAME == null) ? 0 : NAME.hashCode());
-		result = prime * result + ((POSITION == null) ? 0 : POSITION.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((position == null) ? 0 : position.hashCode());
 		result = prime * result + ((coname == null) ? 0 : coname.hashCode());
 		result = prime * result + ((content == null) ? 0 : content.hashCode());
 		result = prime * result + ((coposition == null) ? 0 : coposition.hashCode());
@@ -114,20 +114,20 @@ public class EbbDto {
 		if (getClass() != obj.getClass())
 			return false;
 		EbbDto other = (EbbDto) obj;
-		if (ID == null) {
-			if (other.ID != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!ID.equals(other.ID))
+		} else if (!id.equals(other.id))
 			return false;
-		if (NAME == null) {
-			if (other.NAME != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!NAME.equals(other.NAME))
+		} else if (!name.equals(other.name))
 			return false;
-		if (POSITION == null) {
-			if (other.POSITION != null)
+		if (position == null) {
+			if (other.position != null)
 				return false;
-		} else if (!POSITION.equals(other.POSITION))
+		} else if (!position.equals(other.position))
 			return false;
 		if (coname == null) {
 			if (other.coname != null)
@@ -164,7 +164,7 @@ public class EbbDto {
 	}
 	@Override
 	public String toString() {
-		return "EmpDto [ID=" + ID + ", NAME=" + NAME + ", POSITION=" + POSITION + ", coname=" + coname + ", content="
+		return "EmpDto [id=" + id + ", name=" + name + ", position=" + position + ", coname=" + coname + ", content="
 				+ content + ", deadline=" + deadline + ", coposition=" + coposition + ", nalja=" + nalja + ", num="
 				+ num + ", count=" + count + ", delete=" + delete + "]";
 	}

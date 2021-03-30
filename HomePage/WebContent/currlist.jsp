@@ -9,13 +9,14 @@
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 </head>
 <body>
+<!-- positon, name , id 소문자로 바꿈 -->
 <%@ include file="./template/header.jspf" %>
 	<table>
 		<thead>
 			<tr>
 				<th>번호</th>
-			<c:if test="${ not empty ID}" >
-			<c:if test="${POSITION =='영업' }">
+			<c:if test="${ not empty id}" >
+			<c:if test="${position =='영업' }">
 				<th>ID</th>
 				<th>이름</th>
 				<th>직책</th>
@@ -30,25 +31,25 @@
 		<tbody>
 			<c:forEach items="${currList }" var="bean">
 				<tr>
-					<td><a href="currdetail.bit?num=${bean.num }">${bean.num }</a></td>
-			<c:if test="${not empty ID}" >
-			<c:if test="${not empty POSITION }">
-					<td>${bean.ID }</td>
-					<td>${bean.NAME }</td>
-					<td>${bean.POSITION }</td>
+					<td>${bean.num }</td>
+			<c:if test="${not empty id}" >
+			<c:if test="${not empty position }">
+					<td>${bean.id }</td>
+					<td>${bean.name }</td>
+					<td>${bean.position }</td>
 			</c:if>
 			</c:if>
-					<td><a href="currdetail.bit?num=${bean.num }">${bean.sub }</a></td>
-					<td><a href="currdetail.bit?num=${bean.num }">${bean.open }</a></td>
-					<td><a href="currdetail.bit?num=${bean.num }">${bean.period }</a></td>
+					<td>${bean.sub }</td>
+					<td>${bean.open }</td>
+					<td>${bean.period }</td>
 					<td><a href="currdetail.bit?num=${bean.num }">자세히보기+</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 	<div>
-		<c:if test="${ not empty ID}" >
-		<c:if test="${POSITION =='영업' }">
+		<c:if test="${ not empty id}" >
+		<c:if test="${position =='영업' }">
 		<a href="currinsert.bit">[글쓰기]</a>
 		</c:if>
 		</c:if>

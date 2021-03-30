@@ -58,7 +58,7 @@ public class NoticeBoardDao {
 		
 		public void inputData(String writer,String id,String title,String date,String text) {
 			
-			String sql = "insert into noticeboard (NUM,WRITER,ID,TITLE,CONTENT,DATE) values (NEXTVAL(num_seq),?,?,?,?,?)";
+			String sql = "insert into noticeboard (NUM,WRITER,ID,TITLE,CONTENT,DATE) values (NEXTVAL(number_seq),?,?,?,?,?)";
 			
 			try {
 					Class.forName(driver);
