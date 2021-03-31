@@ -14,6 +14,7 @@ import com.bit.curr.model.CbbDao;
 public class DeleteController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
 		int num=Integer.parseInt(req.getParameter("num"));
 		//System.out.println(num);
 		CbbDao dao=new CbbDao();

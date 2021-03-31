@@ -16,19 +16,17 @@ public class InsertController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getSession().setAttribute("id", "stxz00");
-		req.getSession().setAttribute("name", "ÀÌÇØ³²");
-		req.getSession().setAttribute("position", "Ãë¾÷");
 		RequestDispatcher rd=req.getRequestDispatcher("empinsert.jsp");
 		rd.forward(req, resp);
 		if(req.getSession().getAttribute("id")==null ||
 				req.getSession().getAttribute("name")!=null ||
-				!req.getSession().getAttribute("position").equals("Ãë¾÷"))
+				!req.getSession().getAttribute("position").equals("취업"))
 			resp.sendRedirect("emplist.bit");
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+			req.setCharacterEncoding("utf-8");
 			String id=(String) req.getSession().getAttribute("id");
 			String name=(String) req.getSession().getAttribute("name");
 			String position=(String) req.getSession().getAttribute("position");

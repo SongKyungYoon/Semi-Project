@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,36 +9,55 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <script type="text/javascript">
-	$(function(){
-		if(!(${sessionScope.position}).equals('영업')){
-			$('.aa').hide();
-		};
-	});
+
 </script>
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
-<div class="container" style="margin-top: 10px;">
-  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<div class="container">
   <div class="row">
-    <div class="col-md-4"><h1 style="float: left;">${sessionScope.name}님 로그인</h1> <small style="margin-left: 7px;">ID: ${sessionScope.id}</small><br><small style="margin-left: 7px;">소속: ${sessionScope.position}</small></div>
-    <div class="col-3 col-md-4" style="margin-top: 10px;">
-    <a href="LoginController?logout=로그아웃"><button type="button" class="btn btn-primary">Log-Out</button></a>
-    <a href="RollCall"><button type="button" class="btn btn-primary">입퇴실</button></a>
+    <div class="col-sm">
+      <h2>${sessionScope.name }님 로그인</h2>
+	  <div class="col-sm">
+	  <h5><small>ID: ${sessionScope.id}</small></h5>
+	  <h5><small>소속: ${sessionScope.position}</small></h5>
+	  </div>
     </div>
+    <div class="col-sm">
+	    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+		 <a href="LoginController?logout=logout"><button type="button" class="btn btn-secondary">Log-Out</button></a>
+		 <a href="RollCall"><button type="button" class="btn btn-secondary">출석체크</button></a>
+		    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		      MySelect
+		    </button>
+		    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+		      <a class="dropdown-item" href="currlist.bit">강의확인</a>
+			    <c:if test="${sessionScope.position eq '학생' }">
+			   		<a class="dropdown-item" href="SeongJeogController">성적확인</a>
+			    </c:if>
+			    <c:if test="${sessionScope.position eq '강사' }">
+			    	<a class="dropdown-item" href="gradeinsert.jsp">성적기입</a>
+			    </c:if>
+			    <c:if test="${sessionScope.position eq '학생' }">
+				    <a class="dropdown-item" href="NoticeBoardController">면접신청</a>
+				    <a class="dropdown-item" href="currdetail.jsp">수강신청</a>
+			    </c:if>
+			    <c:if test="${sessionScope.position eq '강사' || sessionScope.position eq '행정'}">
+			   		<a class="dropdown-item" href="classlist.bit">반 리스트</a>
+			    </c:if>
+			    <c:if test="${sessionScope.position eq '행정' }">
+			    	<a class="dropdown-item" href="listsugang.bit">수강 리스트</a>
+			    </c:if>
+		  </div>
+		</div>
+	</div>
   </div>
+</div>
 
   <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-  <div class="row" style="margin-top: 15px;">
-    <div class="col-6 col-md-3"><h6><a href="currlist.bit" class="link-primary">강의확인</a></h6></div>
-    <div class="col-6 col-md-3"><h6><a href="SeongJeogController" class="link-primary">성적확인</a></h6></div>
-    <div class="col-6 col-md-3"><h6><a href="NoticeBoardController" class="link-primary">질문게시글</a></h6></div>
-    <div class="col-6 col-md-3"><h6><a href="currdetail.jsp" class="link-primary">수강신청</a></h6></div>
-    <div class="col-6 col-md-3"><h6><a href="classlist.bit" class="link-primary">반 리스트</a></h6></div>
-    <div class="col-6 col-md-3 aa"><h6><a href="listsugang.bit" class="link-primary">수강 리스트</a></h6></div>
-  </div>
+  
+  
 
-</div>
 <%@ include file="./template/footer.jspf" %>
 </body>
 </html>

@@ -15,34 +15,30 @@
 </head>
 <body>
 <%@ include file="./template/header.jspf" %>
-<div class="container">
 	<form method="POST">
-		<div class="input-group flex-nowrap">
-			<label class="input-group-text">제목</label>
-			<input type="text" class="form-control" name="sub"/>
+		<div>
+			<label>제목</label>
+			<input type="text" name="sub"/>
 		</div>
-		<div class="form-row input-group flex-nowrap">
-			<div class="col input-group flex-nowrap">
-				<label class="input-group-text">개강일</label>
-				<input type="date" class="form-control" name="open"/>
-			</div>
-			<div class="col input-group flex-nowrap">
-				<label class="input-group-text">교육기간</label>
-				<input type="text" class="form-control" name="period"/>
-			</div>
+		<div>
+			<label>개강일</label>
+			<input type="date" name="open"/>
 		</div>
-		<div class="input-group flex-nowrap">
-			<label class="input-group-text">지원자격</label>
-			<input type="text" class="form-control" name="qual"/>
+		<div>
+			<label>교육기간</label>
+			<input type="text" name="period"/>
+		</div>
+		<div>
+			<label>지원자격</label>
+			<input type="text" name="qual"/>
 		</div>
 		<textarea name="content" id="editor1" rows="10" cols="80">
                 내용을 입력하세요.
         </textarea>
         <div>
-        	<button type="button" class="btn btn-primary btn-lg btn-block">입력</button>
+        	<button>입력</button>
         </div>
 	</form>
-</div>
 	<%@ include file="./template/footer.jspf" %>
 </body>
 </html>

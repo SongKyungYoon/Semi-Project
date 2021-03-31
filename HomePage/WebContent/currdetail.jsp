@@ -52,7 +52,7 @@
 		$('.number').first().next().keyup(function(data){
 			var size2=$('.number').first().next().val().length;
 			if(size2>=4){
-				$('.number').first().next().val($('.number').first().next().val().substring(0,4))
+				$('.number').first().next().val($('.number').first().next().next().val().substring(0,4))
 				.next().focus();
 			}
 			if(isNaN($(data).prop('key')) && $('.number').first().next().val()!=''){
@@ -115,6 +115,7 @@
 						$('.number').first().next().val('');
 						$('.number').first().next().next().val('');
 						$('.email').val("");
+						location.href="currlist.bit";
 					},
 					
 				});
