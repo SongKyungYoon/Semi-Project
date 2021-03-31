@@ -1,4 +1,4 @@
-package com.bit.gradelist.controller;
+package com.bi.gradelist.controller;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bi.gradelist.model.GradelistDao;
 import com.bit.classes.model.ClassDao;
-import com.bit.gradelist.model.GradelistDao;
 
 
 @WebServlet("/gradeinsert.bit")

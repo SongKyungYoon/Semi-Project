@@ -27,7 +27,6 @@ public class InsertController extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			req.setCharacterEncoding("utf-8");
 			String id=(String) req.getSession().getAttribute("id");
 			String name=(String) req.getSession().getAttribute("name");
 			String position=(String) req.getSession().getAttribute("position");

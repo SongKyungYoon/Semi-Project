@@ -1,4 +1,4 @@
-package com.bit.gradelist.model;
+package com.bi.gradelist.model;
 
 public class GradelistDto {
 	int num,java,database,framework,delete;

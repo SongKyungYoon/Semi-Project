@@ -1,4 +1,4 @@
-package com.bit.gradelist.model;
+package com.bi.gradelist.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

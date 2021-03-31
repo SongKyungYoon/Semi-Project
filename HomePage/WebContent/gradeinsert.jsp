@@ -16,7 +16,7 @@
 <body>
 <%@ include file="./template/header.jspf" %>
 <div class="container">
-	<form action="gradeinsert.bit" method="post">
+	<form method="post">
 	<div class="row">
 	<div class="col"></div>
 	<div class="col-7">

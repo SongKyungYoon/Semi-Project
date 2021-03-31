@@ -27,13 +27,12 @@ public class InsertController extends HttpServlet{
 		rd.forward(req, resp);
 		if(req.getSession().getAttribute("id")==null ||
 				req.getSession().getAttribute("name")==null ||
-				!req.getSession().getAttribute("position").equals("영업"))
+				!req.getSession().getAttribute("position").equals("¿µ¾÷"))
 			resp.sendRedirect("currlist.bit");
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			req.setCharacterEncoding("utf-8");
 			String id=(String) req.getSession().getAttribute("id");
 			String name=(String) req.getSession().getAttribute("name");
 			String position=(String) req.getSession().getAttribute("position");

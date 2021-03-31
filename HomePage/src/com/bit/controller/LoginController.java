@@ -32,7 +32,7 @@ public class LoginController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String logout = request.getParameter("logout");	//Home Page에서 로그아웃 요청이 올 경우
-		if(logout.equals("logout")) {
+		if(logout.equals("로그아웃")) {
 			HttpSession session = request.getSession();
 			session.removeAttribute("id");
 			session.removeAttribute("name");

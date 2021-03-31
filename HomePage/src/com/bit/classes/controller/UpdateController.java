@@ -27,7 +27,6 @@ public class UpdateController extends HttpServlet{
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("utf-8");
 		int num=Integer.parseInt(req.getParameter("num"));
 		String group=req.getParameter("group");
 		String gangsa=req.getParameter("gangsa");
